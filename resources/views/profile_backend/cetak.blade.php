@@ -83,8 +83,7 @@
         {{ substr($profile->profiles->NRA, 0, 4) }}&nbsp;&nbsp; {{ substr($profile->profiles->NRA, 4, 4) }} &nbsp;&nbsp; {{ substr($profile->profiles->NRA, 8, 4) }} &nbsp;&nbsp; {{ substr($profile->profiles->NRA, 12, 4) }}
     </div>
     <div class="text-kota">{{ $kecamatan->name }}</div>
-    <div class="text-valid">VALID 11/23</div>
-
+    <div class="text-valid">VALID 11/27</div>
 </div>
 </body>
 </html>

@@ -131,13 +131,112 @@
                                 </tbody>
                             </table>
                         </div>
-
-                        <a href="{{ url('cetak') }}" class="btn btn-primary btn-block mt-3 ">Cetak kartu</a>
+                        <button id="openModal"class="btn btn-primary btn-block mt-3 ">Open Modal</button>
+                    </div>
                      </div>
-                </div>
-            </div>
-        </div>
 
+                <style>
+                    .modal {
+                        display: none;
+                        position: fixed;
+                        z-index: 99;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        overflow: auto;
+                        background-color: rgba(0, 0, 0, 0.7);
+                    }
+
+                    .modal-content {
+                        background-color: #fefefe;
+                        margin: 15% auto;
+                        padding: 20px;
+                        border: 1px solid #888;
+                        width: 80%;
+                        max-width: 800px;
+                        position: relative;
+                    }
+
+                    .close {
+                        position: absolute;
+                        right: 10px;
+                        top: 10px;
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: #888;
+                        cursor: pointer;
+                    }
+
+                    iframe {
+                        width: 100%;
+                        height: 500px;
+                        border: none;
+                    }
+                </style>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <iframe id="modalIframe" src=""></iframe>
+                        <a href="{{ url('cetak1') }}" class="btn btn-primary btn-block mt-3 ">Cetak kartu</a>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog
+                    modal-dialog-centered
+                    " role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Profil</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+{{--            modal exampleModal--}}
+
+
+        </div>
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        // Get references to elements
+        var openModalButton = document.getElementById("openModal");
+        var modal = document.getElementById("myModal");
+        var closeModalSpan = document.getElementsByClassName("close")[0];
+        var modalIframe = document.getElementById("modalIframe");
+
+        // When the "Open Modal" button is clicked, display the modal
+        openModalButton.onclick = function() {
+            modal.style.display = "block";
+            modalIframe.src = "{{ route('profile.show2') }}"; // Replace with the URL of your HTML document
+        }
+
+        // When the user clicks the "x" to close the modal
+        closeModalSpan.onclick = function() {
+            modal.style.display = "none";
+            modalIframe.src = ""; // Clear the iframe src
+        }
+
+        // When the user clicks outside the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                modalIframe.src = ""; // Clear the iframe src
+            }
+        }
+    </script>
+@endpush

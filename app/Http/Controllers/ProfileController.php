@@ -149,6 +149,27 @@ class ProfileController extends Controller
 //            ->save(public_path('images/generated.png'));
 
     }
+    public function show1(Profile $profile)
+    {
+        $profile = User::with('profiles')->where('id', auth()->user()->id)->first();
+        $kecamatan = District::where('id', $profile->profiles->district_id)->first();
+
+        return view('profile_backend.cetak1', compact('profile','kecamatan'));
+//        $pdf = PDF::loadView('profile_backend.cetak', compact('profile','kecamatan'));
+//        return $pdf->download('invoice.pdf');
+//        $image = $pdf->output();
+//        $response = response()->make($image, 200);
+//        $response->header('Content-Type', 'image/png');
+//        $response->header('Content-Disposition', 'inline; filename=invoice.png'); // Change the filename as needed
+//        return $response;
+
+//        $html = view('profile_backend.cetak', compact('profile','kecamatan'))->render();
+//
+//        Browsershot::html($html)
+//            ->format('png')
+//            ->save(public_path('images/generated.png'));
+
+    }
     public function view(Request $request){
 
 

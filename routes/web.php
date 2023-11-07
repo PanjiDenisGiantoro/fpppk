@@ -30,7 +30,8 @@ Route::prefix('profile')->group(function(){
     Route::post('/profile/{id}',[\App\Http\Controllers\ProfileController::class,'update'])->name('profile.update');
 });
 Route::get('/lihat',[\App\Http\Controllers\ProfileController::class,'view'])->name('profile.view');
-Route::get('/cetak',[\App\Http\Controllers\ProfileController::class,'show'])->name('profile.show');
+Route::get('/cetak1',[\App\Http\Controllers\ProfileController::class,'show'])->name('profile.show1');
+Route::get('/cetak2',[\App\Http\Controllers\ProfileController::class,'show1'])->name('profile.show2');
 
 //area
 Route::get('provinces', [\App\Http\Controllers\AreaController::class,'provinces'])->name('provinces');
