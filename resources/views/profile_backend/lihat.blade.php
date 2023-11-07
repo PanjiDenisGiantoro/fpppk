@@ -132,7 +132,7 @@
                             </table>
                         </div>
 
-                        <button class="btn btn-primary btn-block mt-3 ">Cetak kartu</button>
+                        <a href="{{ url('cetak') }}" class="btn btn-primary btn-block mt-3 ">Cetak kartu</a>
                      </div>
                 </div>
             </div>

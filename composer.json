@@ -16,6 +16,7 @@
         "laravolt/indonesia": "^0.34.0",
         "livewire/livewire": "^3.0",
         "realrashid/sweet-alert": "^7.1",
+        "spatie/browsershot": "^3.59",
         "spatie/laravel-permission": "^6.0"
     },
     "require-dev": {

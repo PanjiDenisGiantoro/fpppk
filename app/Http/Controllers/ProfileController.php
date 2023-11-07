@@ -11,6 +11,8 @@ use Laravolt\Indonesia\Models\Province;
 use Laravolt\Indonesia\Models\Village;
 use RealRashid\SweetAlert\Facades\Alert;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Spatie\Browsershot\Browsershot;
+
 
 class ProfileController extends Controller
 {
@@ -45,10 +47,11 @@ class ProfileController extends Controller
 //        dd($request->all());
         $bulan = date('m');
         $tahun = date('Y');
-        $kota = $request->district_id;
+        $kota = $request->city_id;
         $nokota = User::leftJoin('profiles', 'profiles.user_id', '=', 'users.id')
-            ->where('city_id', $kota)
-            ->whereMonth('profiles.created_at', $bulan)->whereYear('profiles.created_at', $tahun)->count();
+            ->where('city_id', $kota)->count()+1;
+//        $kota + 3 digit angka max $nokota
+        $no_urut_kota = sprintf("%03d", $nokota + 1);
         $max = User::max('id');
         $no_urut = sprintf("%04d", $max + 1);
 
@@ -71,7 +74,7 @@ class ProfileController extends Controller
             'address' => $request->address,
             'phone_number' => $request->phone_number,
             'province_id' => $request->province_id,
-            'city_id' => $request->district_id,
+            'city_id' => $request->city_id,
             'district_id' => $request->village_id,
             'village_id' => $request->village_id,
             'tipe' => $request->tipe,
@@ -85,7 +88,7 @@ class ProfileController extends Controller
             'linkedin' => $request->linkedin,
             'tiktok' => $request->tiktok,
             'telegram' => $request->telegram,
-            'NRA' => $bulan . $tahun . $nokota+1 . $no_urut,
+            'NRA' => '1022'.$kota.$no_urut_kota. $no_urut,
             'photo' => $nama_file
         ]);
 
@@ -129,10 +132,22 @@ class ProfileController extends Controller
     public function show(Profile $profile)
     {
         $profile = User::with('profiles')->where('id', auth()->user()->id)->first();
-        return view('profile_backend.cetak', compact('profile'));
+        $kecamatan = District::where('id', $profile->profiles->district_id)->first();
 
-//        $pdf = Pdf::loadView('profile_backend.view' );
-//        return $pdf->download('invoice.pdf');
+        $pdf = PDF::loadView('profile_backend.cetak', compact('profile','kecamatan'));
+        return $pdf->download('invoice.pdf');
+//        $image = $pdf->output();
+//        $response = response()->make($image, 200);
+//        $response->header('Content-Type', 'image/png');
+//        $response->header('Content-Disposition', 'inline; filename=invoice.png'); // Change the filename as needed
+//        return $response;
+
+//        $html = view('profile_backend.cetak', compact('profile','kecamatan'))->render();
+//
+//        Browsershot::html($html)
+//            ->format('png')
+//            ->save(public_path('images/generated.png'));
+
     }
     public function view(Request $request){
 

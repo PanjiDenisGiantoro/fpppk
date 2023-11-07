@@ -8,10 +8,11 @@
                     <div class="col-md-12">
                         <div class="box">
                             <div class="box-header d-flex justify-content-between">
-                                <a href="#">
-                                    <img src="assets_backend/images/logo.png" alt="">
-                                </a>
-
+                                <div class="">
+                                    <a href="#">
+                                        <img src="assets_backend/images/logo.png" alt="" style=" max-width: 100%;height: auto;">
+                                    </a>
+                                </div>
                                 <div class="action-reg">
                                     <h4 class="fs-30">Register</h4>
                                     @if(!empty($user->profiles))
@@ -264,7 +265,7 @@
                                         <div class="mb-3  mt-24">
                                             <label class="form-label mb-14">Status</label>
                                             @if(empty($user->profiles))
-                                            <option value="">Pilih</option>
+                                                <option value="">Pilih</option>
                                                 <select name="status" id="status" class="form-control">
                                                     <option value="">Pilih</option>
                                                     <option value="PNS">PNS</option>
