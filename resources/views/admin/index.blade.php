@@ -12,7 +12,7 @@
                         <div class="content">
                             <h5 class="title-box fs-15 mt-2">Total Pending Verifikasi</h5>
                             <div class="themesflat-counter fs-14 font-wb color-1">
-                                <span class="number" data-from="0" data-to="1225" data-speed="2500" data-inviewport="yes">1225</span>
+                                <span class="number" data-from="0" data-to="1225" data-speed="2500" data-inviewport="yes">{{$valid}}</span>
                             </div>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                         <div class="content click-c">
                             <h5 class="title-box fs-15 mt-2">Total Berhasil Verifikasi</h5>
                             <div class="themesflat-counter fs-14 font-wb color-2">
-                                <span class="number" data-from="0" data-to="309" data-speed="2500" data-inviewport="yes">154 +</span>
+                                <span class="number" data-from="0" data-to="309" data-speed="2500" data-inviewport="yes">{{$novalid}}</span>
                             </div>
                         </div>
 

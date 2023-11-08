@@ -10,8 +10,11 @@ class UserController extends Controller
 {
     public function index()
     {
+        $valid = Profile::where('is_valid', 1)->count();
+        $novalid = Profile::where('is_valid', 0)->count();
+
         $user = Profile::with('user','kecamatan')->where('NRA','!=',null)
             ->latest()->get();
-        return view('admin.index', compact('user'));
+        return view('admin.index', compact('user','valid','novalid'));
     }
 }
