@@ -27,7 +27,7 @@
             padding: 10px;
             font-size: 30px;
             font-weight: bold;
-            font-family: 'Poppins', 'sans-serif';
+            font-family: 'Poppins', 'Roboto', sans-serif;
             text-align: left; /* Teks rata kiri */
         }
         .text-email {

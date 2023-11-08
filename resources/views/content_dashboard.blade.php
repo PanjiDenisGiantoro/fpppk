@@ -3,7 +3,7 @@
     <div class="main">
         <div class="main-content dashboard">
 
-            @if(Auth::user()->role == 'admin')
+            @if(auth()->user()->hasRole('admin'))
 
                 <div class="row">
                     <div class="col-12">

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="sidebar">
     <div class="sidebar-logo">
         <a href="index.html">
@@ -16,15 +18,57 @@
             @if(auth()->user()->hasRole('admin'))
 
                 <li>
-                    <a href="{{ route('dashboard') }}">
+                    <a href="#">
                         <i class='bx bxs-dashboard'></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('user.index') }}">
-                        <i class='bx bxs-dashboard'></i>
-                        <span>User</span>
+                        <i class="fa fa-user"></i>
+                        <span>Data Anggota </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('user.index') }}">
+                        <i class="fa fa-whatsapp"></i>
+                        <span>Kirim Pesan WA Massal </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('user.index') }}">
+                        <i class='fa fa-bullhorn'></i>
+                        <span>Pengumuman </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('user.index') }}">
+                        <i class='fa fa-android'></i>
+                        <span>KPI Anggota </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('user.index') }}">
+                        <i class='fa fa-won'></i>
+                        <span>Struktur Organisasi </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('user.index') }}">
+                        <i class='fa fa-book'></i>
+                        <span>Posting Artikel </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('user.index') }}">
+                        <i class='fa fa-bookmark'></i>
+                        <span>Agenda </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('user.index') }}">
+                        <i class='fa fa-ban'></i>
+                        <span>Share Ilmu </span>
                     </a>
                 </li>
             @else

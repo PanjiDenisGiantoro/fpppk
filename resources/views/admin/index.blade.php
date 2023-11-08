@@ -93,17 +93,29 @@
                                                             {{ $list->kecamatan->name ?? '' }}
                                                         </div>
                                                     </td>
-                                                    <td><span class="badge badge-warning">
-                                                            {{ $list->is_valid ?? '' }}
-                                                        </span></td>
+                                                    <td>
+
+                                                        <span class="badge
+                                                         @if($list->is_valid == 0)
+                                                         badge-danger
+                                                            @else
+                                                                badge-warning
+                                                            @endif
+                                                        ">
+                                                             @if($list->is_valid == 0)
+                                                                Belum Verifikasi
+                                                            @else
+                                                                Verifikasi
+                                                            @endif
+                                                        </span>
+                                                    </td>
                                                     <td>
                                                         <div class="dropdown">
                                                             <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 <i class='bx bx-dots-horizontal-rounded'></i>
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-right">
-                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="bx bx-trash"></i> Delete</a>
-                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="bx bx-edit mr-5"></i>Edit</a>
+                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="bx bx-trash"></i> Aktifasi</a>
                                                             </div>
                                                         </div>
                                                     </td>

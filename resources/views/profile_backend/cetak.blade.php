@@ -32,7 +32,7 @@
         }
         .text-email {
             position: absolute;
-            top: 280px;
+            top: 287px;
             left:40px;
             padding: 10px;
             font-size: 20px;
@@ -42,7 +42,7 @@
         }
         .text-kota {
             position: absolute;
-            top: 280px;
+            top: 287px;
             left:330px;
             padding: 10px;
             color: orange;
@@ -52,7 +52,7 @@
         }
         .text-valid {
             position: absolute;
-            top: 280px;
+            top: 287px;
             left:540px;
             padding: 10px;
             color: orange;
