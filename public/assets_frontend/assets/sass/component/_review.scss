@@ -1,0 +1,64 @@
+/*-------------------------------------------------------
+32. Review css
+---------------------------------------------------------*/
+
+
+.review-user-pic {
+	 img {
+		border-radius: 50%;
+	}
+}
+
+.review-single {
+	text-align: center;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0,.05);
+    padding: 5rem 3rem;
+    border: 1px solid var(--clr-ccc);
+	background-color: var(--clr-white);
+	.review-user-pic {
+		margin-bottom: 2rem;
+	}
+	.review-user-bio {
+		margin-bottom: 4rem;
+		h5 {
+			text-transform: capitalize;
+			margin-bottom: 5px;
+		}
+		span {
+			display: block;
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 1;
+		}
+	}
+	.review-txt {
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.review-left-content {
+	.hero-sub-title {
+		margin-bottom: 2rem;
+	}
+	.heading-1 {
+		font-size: 52px;
+		line-height: 60px;
+		font-weight: 800;
+		padding-bottom: 3rem;
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+		&::before {
+			@include pos-abs(var(--clr-heading),1px,10rem,1);
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
+
+.qt {
+    display: block;
+    margin-bottom: 2rem;
+}

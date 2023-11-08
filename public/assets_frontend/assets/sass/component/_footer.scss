@@ -1,0 +1,143 @@
+
+/*-------------------------------------------------------
+23.Footer css 
+---------------------------------------------------------*/
+
+/*footer Default*/
+
+.footer {
+	p {
+		color: var(--clr-ccc);
+	}
+}
+
+.footer-wave {
+	position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    opacity: .13;
+}
+
+.footer-elec {
+	position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    width: 38%;
+    opacity: .5;
+}
+
+.footer-part {
+	right: 100px;
+    bottom: -110px;
+    opacity: 1;
+    filter: blur(130px);
+}
+
+//Footer Title
+
+.footer-widget-title {
+    font-weight: 600;
+    color: var(--clr-white);
+	margin-bottom: 3rem;
+}
+
+//Footer Contact
+
+.footer-contact-opt {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.footer-contact-single {
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+	i {
+		display: inline-block;
+		height: 4.5rem;
+		width: 4.5rem;
+		line-height: 4.5rem;
+		text-align: center;
+		border-radius: 50%;
+		color: var(--clr-white);
+		background-color: var(--clr-def);
+	}
+	.footer-contact-text {
+		p {
+			font-size: 1.6rem;
+			color: var(--clr-ccc);
+			line-height: 1.1;
+		}
+		h5 {
+			font-size: 1.6rem;
+			font-weight: 500;
+			color: var(--clr-ccc);
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+
+//Footer About Logo
+
+.footer-widget.about {
+    border-right: 1px solid rgba(255,255,255,.2);
+    margin-right: 3rem;
+    padding-right: 5rem;
+}
+
+.footer-logo {
+	img {
+		height: 60px;
+		margin-bottom: 3rem;
+		display: block;
+	}
+	p {
+		
+	}
+}
+
+//Footer List
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+	li {
+		a {
+			color: var(--clr-ccc);
+		}
+	}
+}
+
+//Social Icon
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+	margin-top: 3rem;
+	li {
+		a {
+			display: inline-block;
+			height: 4.5rem;
+			width: 4.5rem;
+			line-height: 4.5rem;
+			border: 2px solid var(--clr-ccc);
+			text-align: center;
+			-webkit-border-radius: 50%;
+			border-radius: 50%;
+			color: var(--clr-white);
+			transition: all .5s ease;
+			&:hover {
+				background-color: var(--clr-def);
+				border: 2px solid var(--clr-def);
+			}
+		}
+	}
+}
+

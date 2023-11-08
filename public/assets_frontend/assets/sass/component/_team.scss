@@ -1,0 +1,104 @@
+/*-------------------------------------------------------
+35. Team css 
+---------------------------------------------------------*/
+
+.team-2 {
+	margin-top: -12.8rem;
+	&::before {
+		@include pos-abs(var(--clr-bg),70%,100%,1);
+		top: 0;
+		right: 20rem;
+	}
+}
+
+.team-box {
+	overflow: hidden;
+	&:hover {
+		.team-social {
+			translate: 0 0;
+		}
+		.team-pic {
+			&::before {
+				translate: 0 0;
+			}
+		}
+	}
+	.team-pic {
+		position: relative;
+		z-index: 1;
+		&::before {
+			@include pos-abs(var(--clr-def),21rem,100%,.3);
+			bottom: -70px;
+			left: 0;
+			border-radius: 3rem;
+			rotate: -29deg;
+			z-index: 1;
+			transition: all .5s ease;
+			translate: 0 100px;
+		}
+	}
+	.team-desc {
+		padding: 2rem 3rem;
+		background-color: var(--clr-bg);
+		border-radius: 5px;
+		position: relative;
+		z-index: 1;
+		&::before {
+			@include pos-abs(var(--clr-white),4rem,4rem,1);
+			bottom: 1rem;
+			right: 1rem;
+			-webkit-border-radius: 50%;
+			border-radius: 50%;
+		}
+		&::after {
+			@include pos-abs(transparent,8rem,8rem,1);
+			bottom: -3rem;
+			right: -3rem;
+			-webkit-border-radius: 50%;
+			border-radius: 50%;
+			border: 2px solid var(--clr-def);
+		}
+		h4 {
+			margin-bottom: 5px;
+		}
+		span {
+			font-weight: 600;
+			color: var(--clr-heading);
+			display: block;
+			font-size: 1.4rem;
+			line-height: 1;
+		}
+	}
+}
+
+.team-social {
+	position: absolute;
+	left: 0;
+	bottom: 2rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	z-index: 6;
+	translate: 0 100px;
+	transition: all .5s ease;
+	li {
+		a {
+			i {
+				height: 5rem;
+				width: 5rem;
+				line-height: 5rem;
+				background-color: var(--clr-def);
+				text-align: center;
+				color: var(--clr-white);
+				-webkit-border-radius: 50%;
+				border-radius: 50%;
+				transition: all .5s ease;
+				&:hover {
+					background-color: var(--clr-black);
+				}
+			}
+		}
+	}
+}

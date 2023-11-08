@@ -1,0 +1,63 @@
+/*-------------------------------------------------------
+01. Work  Css
+---------------------------------------------------------*/
+
+.work-area {
+	background-repeat: repeat;
+	&::before {
+		@include pos-abs(var(--clr-bg),50%,100%,1);
+		bottom: 0;
+		left: 0;
+	}
+}
+
+.work-ovr-dot {
+	position: absolute;
+	right: 3rem;
+	top: 3rem;
+	z-index: -1;
+}
+
+.work-pic {
+	position: relative;
+	z-index: 1;
+	.work-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		display: flex;
+		align-items: flex-end;
+		background-color: rgba(3, 10, 21,.7);
+		.work-content {
+			width: 100%;
+			.heading-5 {
+				border-bottom: 1px solid rgba(255,255,255,.3);
+				padding-bottom: 2rem;
+				color: var(--clr-white);
+				margin-bottom: 0;
+				padding-left: 2rem;
+			}
+			.work-link-popup {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 2rem 2rem 2rem 2rem;
+				position: relative;
+				z-index: 1;
+				&::before {
+					@include pos-abs(rgba(255,255,255,.3),100%,1px,1);
+					top: 0;
+					left: 50%;
+					translate: -50% 0;
+				}
+				
+				a {
+					color: var(--clr-white);
+				}
+			}
+		}
+	}
+}
