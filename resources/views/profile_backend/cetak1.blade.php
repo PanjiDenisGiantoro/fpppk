@@ -27,7 +27,7 @@
             padding: 10px;
             font-size: 30px;
             font-weight: bold;
-            font-family: "Arial, sans-serif";
+            font-family: 'Poppins', 'sans-serif';
             text-align: left; /* Teks rata kiri */
         }
         .text-email {
@@ -69,16 +69,15 @@
             border-radius: 60%;
             border: 4px solid #febc58;
             box-shadow: 0 0 0 5px #febc58;
-
         }
     </style>
 </head>
 <body>
 <div class="container">
     <img class="image" src="{{ url('assets_backend/kartu3.png') }}" alt="Gambar Anda">
-        <img src="{{ url('assets_backend/'.$profile->profiles->photo) }}" alt="" class="avatar">
+        <img src="{{ url('foto/'.$profile->profiles->photo) }}" alt="" class="avatar">
     <div class="text-label">
-        {{ strtoupper($profile->name) }}</div>
+        {{ strtoupper($profile->name) }} {{ $profile->profiles->gelar ?? '' }}</div>
     <div class="text-email">
         {{ substr($profile->profiles->NRA, 0, 4) }}&nbsp;&nbsp; {{ substr($profile->profiles->NRA, 4, 4) }} &nbsp;&nbsp; {{ substr($profile->profiles->NRA, 8, 4) }} &nbsp;&nbsp; {{ substr($profile->profiles->NRA, 12, 4) }}
     </div>

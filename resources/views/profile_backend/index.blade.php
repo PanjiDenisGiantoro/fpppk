@@ -439,7 +439,7 @@
                                             <label class="form-label mb-14">Foto <span
                                                     style="font-size: 12px;color: red">Ukuran gambar 500 KB</span></label>
                                             <input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="250000000"/>
-                                            <input type="file" class="form-control" name="foto" id="foto"
+                                            <input type="file" class="form-control" name="foto" id="inputImageFile"
                                                    accept="image/*" onchange="loadFile(event)">
                                         </div>
                                         <img id="output" width="100" height="100"/>
@@ -496,6 +496,60 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
+
+        function compressImage(inputFile, maxWidth, maxHeight, outputFormat, quality, callback) {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const image = new Image();
+                image.src = event.target.result;
+                image.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    let width = image.width;
+                    let height = image.height;
+
+                    // Menyesuaikan ukuran gambar sesuai dengan maxWidth dan maxHeight yang ditentukan
+                    if (width > maxWidth) {
+                        height *= maxWidth / width;
+                        width = maxWidth;
+                    }
+                    if (height > maxHeight) {
+                        width *= maxHeight / height;
+                        height = maxHeight;
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(image, 0, 0, width, height);
+
+                    // Mengubah gambar hasil kompresi ke format yang ditentukan (e.g., 'image/jpeg')
+                    const compressedDataUrl = canvas.toDataURL(outputFormat, quality / 100);
+
+                    // Memanggil callback dengan gambar yang telah dikompresi
+                    callback(compressedDataUrl);
+                };
+            };
+
+            reader.readAsDataURL(inputFile);
+        }
+
+
+        const inputImageFile = document.getElementById('inputImageFile'); // Ganti dengan elemen input gambar Anda
+        const maxWidth = 800; // Lebar maksimum gambar yang diinginkan
+        const maxHeight = 600; // Tinggi maksimum gambar yang diinginkan
+        const outputFormat = 'image/jpeg'; // Format output gambar
+        const quality = 50; // Kualitas gambar (0-100)
+
+        inputImageFile.addEventListener('change', function (event) {
+            const inputFile = event.target.files[0];
+            if (inputFile) {
+                compressImage(inputFile, maxWidth, maxHeight, outputFormat, quality, function (compressedDataUrl) {
+                    const compressedImageElement = document.getElementById('compressedImage');
+                    compressedImageElement.src = compressedDataUrl;
+                });
+            }
+        });
 
         function myFunction() {
             var x = document.getElementById("username");

@@ -45,14 +45,13 @@ class ProfileController extends Controller
             'name' => $request->username,
             'email' => $request->email,
         ]);
-
-//        dd($request->all());
         $bulan = date('m');
-        $tahun = date('Y');
+//        tahunnya ambil 2 di belakang tahun sekarang + 5 tahun
+        $tahun = date('y') + 5;
         $kota = $request->city_id;
         $nokota = User::leftJoin('profiles', 'profiles.user_id', '=', 'users.id')
                 ->where('city_id', $kota)->count() + 1;
-        $no_urut_kota = sprintf("%03d", $nokota + 1);
+        $no_urut_kota = sprintf("%02d", $nokota + 1);
         $max = User::max('id');
         $no_urut = sprintf("%04d", $max + 1);
 
@@ -91,7 +90,7 @@ class ProfileController extends Controller
             'telegram' => $request->telegram,
             'NRA' => '1022' . $kota . $no_urut_kota . $no_urut,
             'photo' => $nama_file,
-            'valid_thru' => date('Y-m-d', strtotime('+5 year')),
+            'valid_thru' => $bulan . '/' .$tahun ,
         ]);
         $datas = [
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',

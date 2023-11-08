@@ -76,9 +76,9 @@
 <body>
 <div class="container">
     <img class="image" src="{{ public_path('assets_backend/kartu3.png') }}" alt="Gambar Anda">
-        <img src="{{ public_path('assets_backend/kartu3.png') }}" alt="" class="avatar">
+        <img src="{{ public_path('foto/'.$profile->profiles->photo) }}" alt="" class="avatar">
     <div class="text-label">
-        {{ strtoupper($profile->name) }}</div>
+        {{ strtoupper($profile->name) }} {{ $profile->profiles->gelar ?? '' }}</div>
     <div class="text-email">
         {{ substr($profile->profiles->NRA, 0, 4) }}&nbsp;&nbsp; {{ substr($profile->profiles->NRA, 4, 4) }} &nbsp;&nbsp; {{ substr($profile->profiles->NRA, 8, 4) }} &nbsp;&nbsp; {{ substr($profile->profiles->NRA, 12, 4) }}
     </div>
