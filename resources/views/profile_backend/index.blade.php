@@ -436,8 +436,10 @@
                                                    value="{{ $user->profiles->telegram ?? '' }}">
                                         </div>
                                         <div class="mb-3  mt-24">
-                                            <label class="form-label mb-14">Foto <span
-                                                    style="font-size: 12px;color: red">Ukuran gambar 500 KB</span></label>
+                                            <label class="form-label mb-14">Foto
+{{--                                                <span--}}
+{{--                                                    style="font-size: 12px;color: red">Ukuran gambar 500 KB</span>--}}
+                                            </label>
                                             <input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="250000000"/>
                                             <input type="file" class="form-control" name="foto" id="inputImageFile"
                                                    accept="image/*" onchange="loadFile(event)">
