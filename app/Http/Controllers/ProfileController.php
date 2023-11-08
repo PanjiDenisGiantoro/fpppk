@@ -96,7 +96,7 @@ class ProfileController extends Controller
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
             'sender' => '6289522900800',
             'number' => $request->wa,
-            'message' => 'Terima kasih telah mendaftar Menjadi Anggota di FPPPK Kabupaten Bogor. Berikut Adalah Kode Registrasi Online Anda :'.'*'. $data->NRA . '.'*'.Silahkan Tunggu 1 x 24 Jam Data Anda Sedang Diverifikasi .
+            'message' => 'Terima kasih telah mendaftar Menjadi Anggota di FPPPK Kabupaten Bogor. Berikut Adalah Kode Registrasi Online Anda :'. $data->NRA .'Silahkan Tunggu 1 x 24 Jam Data Anda Sedang Diverifikasi .
             Jika Disetujui Anda Akan Mendapatkan Notifikasi Selanjutnya Melalui Whatsapp Ini
             Terima kasih',
         ];
