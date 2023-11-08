@@ -30,9 +30,10 @@ Route::prefix('profile')->group(function(){
     Route::post('/profile/{id}',[\App\Http\Controllers\ProfileController::class,'update'])->name('profile.update');
 });
 Route::prefix('user')->group(function(){
-    Route::get('/',[\App\Http\Controllers\ProfileController::class,'index'])->name('profile');
-    Route::post('/',[\App\Http\Controllers\ProfileController::class,'store'])->name('profile.store');
+    Route::get('/',[\App\Http\Controllers\ProfileController::class,'index'])->name('user');
+    Route::post('/',[\App\Http\Controllers\ProfileController::class,'store'])->name('user.store');
 });
+
 Route::get('/lihat',[\App\Http\Controllers\ProfileController::class,'view'])->name('profile.view');
 Route::get('/cetak1',[\App\Http\Controllers\ProfileController::class,'show'])->name('profile.show1');
 Route::get('/cetak2',[\App\Http\Controllers\ProfileController::class,'show1'])->name('profile.show2');
