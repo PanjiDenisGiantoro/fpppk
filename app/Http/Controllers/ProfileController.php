@@ -75,7 +75,7 @@ class ProfileController extends Controller
             'phone_number' => $request->phone_number,
             'province_id' => $request->province_id,
             'city_id' => $request->city_id,
-            'district_id' => $request->village_id,
+            'district_id' => $request->district_id,
             'village_id' => $request->village_id,
             'tipe' => $request->tipe,
             'tahun' => $request->tahun,
@@ -136,18 +136,6 @@ class ProfileController extends Controller
 
         $pdf = PDF::loadView('profile_backend.cetak', compact('profile','kecamatan'));
         return $pdf->download('invoice.pdf');
-//        $image = $pdf->output();
-//        $response = response()->make($image, 200);
-//        $response->header('Content-Type', 'image/png');
-//        $response->header('Content-Disposition', 'inline; filename=invoice.png'); // Change the filename as needed
-//        return $response;
-
-//        $html = view('profile_backend.cetak', compact('profile','kecamatan'))->render();
-//
-//        Browsershot::html($html)
-//            ->format('png')
-//            ->save(public_path('images/generated.png'));
-
     }
     public function show1(Profile $profile)
     {
@@ -155,20 +143,6 @@ class ProfileController extends Controller
         $kecamatan = District::where('id', $profile->profiles->district_id)->first();
 
         return view('profile_backend.cetak1', compact('profile','kecamatan'));
-//        $pdf = PDF::loadView('profile_backend.cetak', compact('profile','kecamatan'));
-//        return $pdf->download('invoice.pdf');
-//        $image = $pdf->output();
-//        $response = response()->make($image, 200);
-//        $response->header('Content-Type', 'image/png');
-//        $response->header('Content-Disposition', 'inline; filename=invoice.png'); // Change the filename as needed
-//        return $response;
-
-//        $html = view('profile_backend.cetak', compact('profile','kecamatan'))->render();
-//
-//        Browsershot::html($html)
-//            ->format('png')
-//            ->save(public_path('images/generated.png'));
-
     }
     public function view(Request $request){
 
@@ -178,9 +152,6 @@ class ProfileController extends Controller
         $kota = City::where('id', $profile->profiles->city_id)->first();
         $kecamatan = District::where('id', $profile->profiles->district_id)->first();
         $desa = Village::where('id', $profile->profiles->village_id)->first();
-//        dd($provinsi);
-//        $pdf = Pdf::loadView('profile_backend.view' );
-//        return $pdf->download('invoice.pdf');
         return view('profile_backend.lihat', compact('profile','provinsi','kota','kecamatan','desa'));
     }
 
@@ -224,8 +195,8 @@ class ProfileController extends Controller
                 'address' => $request->address,
                 'phone_number' => $request->phone_number,
                 'province_id' => $request->province_id,
-                'city_id' => $request->district_id,
-                'district_id' => $request->village_id,
+                'city_id' => $request->city_id,
+                'district_id' => $request->district_id,
                 'village_id' => $request->village_id,
                 'tipe' => $request->tipe,
                 'tahun' => $request->tahun,

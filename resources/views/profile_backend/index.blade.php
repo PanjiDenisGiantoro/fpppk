@@ -16,7 +16,7 @@
                                 <div class="action-reg">
                                     <h4 class="fs-30">Register</h4>
                                     @if(!empty($user->profiles))
-                                        <a href="{{ url('profile/lihat/'.$user->profiles->id) }}"
+                                        <a href="{{ url('cetak1') }}"
                                            class="btn btn-primary">Cetak Kartu</a>
                                     @endif
                                 </div>
@@ -240,7 +240,6 @@
                                             <label class="form-label mb-14">Kabupaten / Kota</label>
                                             <select class="form-control select2" name="city_id" id="kota">
                                                 <option value="">Pilih</option>
-
                                             </select>
 
                                         </div>
@@ -362,10 +361,11 @@
                                                    value="{{ $user->profiles->telegram ?? '' }}">
                                         </div>
                                         <div class="mb-3  mt-24">
-                                            <label class="form-label mb-14">Foto</label>
-                                            <input type="file" class="form-control" name="foto" id="foto">
+                                            <label class="form-label mb-14">Foto <span style="font-size: 12px;color: red">Ukuran gambar 500 KB</span></label>
+                                            <input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="250000000" />
+                                            <input type="file" class="form-control" name="foto" id="foto" accept="image/*" onchange="loadFile(event)">
                                         </div>
-
+                                            <img id="output" width="100" height="100" />
                                         <div class="mb-3 mt-29">
 
                                             <button
@@ -423,6 +423,13 @@
             $('.select2').select2();
 
         });
+        var loadFile = function(event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+            }
+        };
         let status = $('#status').val();
 
         $('#status').change(function () {
@@ -579,7 +586,6 @@
         }
 
         $(function () {
-
             $('#provinsi').on('change', function () {
                 onChangeSelect('{{ route("cities") }}', $(this).val(), 'kota');
             });

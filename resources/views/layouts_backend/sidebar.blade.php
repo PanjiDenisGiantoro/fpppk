@@ -18,74 +18,47 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            </li>
-{{--            <li class="sidebar-submenu">--}}
-{{--                <a href="project.html" class="sidebar-menu-dropdown">--}}
-{{--                    <i class='bx bxs-bolt'></i>--}}
-{{--                    <span>Project</span>--}}
-{{--                    <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>--}}
-{{--                </a>--}}
-{{--                <ul class="sidebar-menu sidebar-menu-dropdown-content">--}}
-{{--                    <li>--}}
-{{--                        <a href="project.html">--}}
-{{--                            Project--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <a href="project-details.html">--}}
-{{--                            Project Details--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <a href="new-project.html">--}}
-{{--                            New Project--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </li>--}}
+{{--            has role admin--}}
+            @if(auth()->user()->hasRole('admin'))
+                <li>
+                    <a href="{{ route('user') }}">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>User</span>
+                    </a>
+                </li>
+            @else
+                <li>
+                    <a href="{{ route('profile') }}">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+            @php
+            $profile = \App\Models\Profile::where('user_id', auth()->user()->id)->first();
+            @endphp
+            @if(!empty($profile))
+                <li>
+                    <a href="{{ url('/lihat') }}">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>Cetak Kartu</span>
+                    </a>
+                </li>
+            @endif
 
-{{--            <li class="sidebar-submenu">--}}
-{{--                <a href="clients.html" class="sidebar-menu-dropdown">--}}
-{{--                    <i class='bx bxs-user'></i>--}}
-{{--                    <span>Client</span>--}}
-{{--                    <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>--}}
-{{--                </a>--}}
-{{--                <ul class="sidebar-menu sidebar-menu-dropdown-content">--}}
-{{--                    <li>--}}
-{{--                        <a href="clients.html">--}}
-{{--                            Manager Client--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <a href="client-details.html">--}}
-{{--                            Client Details--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </li>--}}
-            <li>
-                <a href="{{ route('profile') }}">
-                    <i class='bx bxs-dashboard'></i>
-                    <span>Profile</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url('/lihat') }}">
-                    <i class='bx bxs-dashboard'></i>
-                    <span>Cetak Kartu</span>
-                </a>
-            </li>
 
-            <li>
-                <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
-                    <div>
-                        <i class='bx bx-cog mr-10'></i>
-                        <span>darkmode</span>
-                    </div>
+                <li>
+                    <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
+                        <div>
+                            <i class='bx bx-cog mr-10'></i>
+                            <span>darkmode</span>
+                        </div>
 
-                    <span class="darkmode-switch"></span>
-                </a>
-            </li>
+                        <span class="darkmode-switch"></span>
+                    </a>
+                </li>
+                @endif
+
+
         </ul>
     </div>
 

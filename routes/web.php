@@ -29,10 +29,13 @@ Route::prefix('profile')->group(function(){
     Route::post('/',[\App\Http\Controllers\ProfileController::class,'store'])->name('profile.store');
     Route::post('/profile/{id}',[\App\Http\Controllers\ProfileController::class,'update'])->name('profile.update');
 });
+Route::prefix('user')->group(function(){
+    Route::get('/',[\App\Http\Controllers\ProfileController::class,'index'])->name('profile');
+    Route::post('/',[\App\Http\Controllers\ProfileController::class,'store'])->name('profile.store');
+});
 Route::get('/lihat',[\App\Http\Controllers\ProfileController::class,'view'])->name('profile.view');
 Route::get('/cetak1',[\App\Http\Controllers\ProfileController::class,'show'])->name('profile.show1');
 Route::get('/cetak2',[\App\Http\Controllers\ProfileController::class,'show1'])->name('profile.show2');
-
 //area
 Route::get('provinces', [\App\Http\Controllers\AreaController::class,'provinces'])->name('provinces');
 Route::get('cities', [\App\Http\Controllers\AreaController::class,'cities'])->name('cities');

@@ -100,7 +100,7 @@
                                 <tr>
                                     <td class="py-2 px-0"> <span class="w-50">RT / RW</span> </td>
                                     <td>:</td>
-                                    <td class="py-2 px-0"> <span class="">{{ $profile->rtrw ?? '' }}</span> </td>
+                                    <td class="py-2 px-0"> <span class="">{{ $profile->profiles->rtrw ?? '' }}</span> </td>
                                 </tr>
                                 <tr>
                                     <td class="py-2 px-0"> <span class="w-50">Status</span> </td>
@@ -118,16 +118,13 @@
                                 <tr>
                                     <td class="py-2 px-0"> <span class="w-50">No Hp</span> </td>
                                     <td>:</td>
-                                    <td class="py-2 px-0"> <span class="">{{ $profile->phone_number ?? '-' }}</span> </td>
+                                    <td class="py-2 px-0"> <span class="">{{ $profile->profiles->phone_number ?? '-' }}</span> </td>
                                 </tr>
-
                                 <tr>
                                     <td class="py-2 px-0"> <span class="w-50">No WA</span> </td>
                                     <td>:</td>
-                                    <td class="py-2 px-0"> <span class="">{{ $profile->wa ?? '-' }}</span> </td>
+                                    <td class="py-2 px-0"> <span class="">{{ $profile->profiles->wa ?? '-' }}</span> </td>
                                 </tr>
-
-
                                 </tbody>
                             </table>
                         </div>
