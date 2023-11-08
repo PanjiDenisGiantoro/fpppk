@@ -128,7 +128,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <button id="openModal"class="btn btn-primary btn-block mt-3 ">Open Modal</button>
+                        <button id="openModal"class="btn btn-primary btn-block mt-3 ">Lihat Kartu</button>
                     </div>
                      </div>
 
