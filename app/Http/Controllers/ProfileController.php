@@ -38,6 +38,8 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $profiles = User::with('profiles')->where('id', auth()->user()->id)->first();
         $profiles->update([
             'name' => $request->username,
@@ -57,6 +59,11 @@ class ProfileController extends Controller
 
 //        jika ada gambar upload
         if ($request->hasFile('foto')) {
+//            limit ukuran file 500 kb
+            if($request->file('foto')->getSize() > 500000){
+                Alert::error('Gagal', 'Ukuran File Terlalu Besar');
+                return redirect()->back();
+            }
             $file = $request->file('foto');
             $nama_file = time() . "_" . $file->getClientOriginalName();
             $tujuan_upload = 'foto';
