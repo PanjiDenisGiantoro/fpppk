@@ -21,11 +21,9 @@
     <link rel="stylesheet" href="assets_backend/css/style.css">
     <link rel="stylesheet" href="assets_backend/css/responsive.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-
-    <link rel="stylesheet" href="./libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="./libs/date-picker/datepicker.css">
-    <link rel="stylesheet" href="./libs/datatable/css/dataTables.bootstrap5.css">
-    <link rel="stylesheet" href="./libs/rating/css/rating-themes.css">
+    <link rel="stylesheet" href="assets_backend//libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets_backend/libs/date-picker/datepicker.css">
+    <link rel="stylesheet" href="assets_backend/libs/datatable/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="assets_backend/libs/rating/css/rating-themes.css">
     <!-- APP CSS -->
 </head>

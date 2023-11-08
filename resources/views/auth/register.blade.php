@@ -279,12 +279,12 @@
         </div>
         <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
             <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-                <h1><a href="" rel="dofollow">FPPPK</a></h1>
             </div>
             <div class="formbg-outer">
                 <div class="formbg">
                     <div class="formbg-inner padding-horizontal--48">
-                        <span class="padding-bottom--15">Pendaftaran FPPPK Kab Bogor</span>
+                        <img src="<?= url('assets/logo-2.png') ?>" alt=""
+                             style="width: 100%; margin: 0 auto; display: block; margin-bottom: 30px;">
                         <form id="stripe-login" method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="field padding-bottom--24">
@@ -322,7 +322,7 @@
                     </div>
                 </div>
                 <div class="footer-link padding-top--24">
-                    <span>Don't have an account? <a href="{{ url('login') }}">Sign In</a></span>
+                    <span>Silahkan Login | <a href="{{ url('login') }}">Sign In</a></span>
                     <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
                         <span><a href="#">© Desa Tech Nusantara</a></span>
                         <span><a href="#">Contact</a></span>

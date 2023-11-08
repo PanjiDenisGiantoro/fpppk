@@ -12,16 +12,17 @@
         <ul class="sidebar-menu tf">
             <li class="sidebar-submenu">
 
-            <li>
-                <a href="{{ route('dashboard') }}">
-                    <i class='bx bxs-dashboard'></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
 {{--            has role admin--}}
             @if(auth()->user()->hasRole('admin'))
+
                 <li>
-                    <a href="{{ route('user') }}">
+                    <a href="{{ route('dashboard') }}">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('user.index') }}">
                         <i class='bx bxs-dashboard'></i>
                         <span>User</span>
                     </a>
@@ -61,6 +62,4 @@
 
         </ul>
     </div>
-
-    <!-- END SIDEBAR MENU -->
 </div>

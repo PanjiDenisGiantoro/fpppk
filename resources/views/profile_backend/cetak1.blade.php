@@ -21,7 +21,7 @@
 
         .text-label {
             position: absolute;
-            top: 250px;
+            top: 270px;
             left:40px;
                 color: black;
             padding: 10px;
@@ -32,7 +32,7 @@
         }
         .text-email {
             position: absolute;
-            top: 280px;
+            top: 300px;
             left:40px;
             padding: 10px;
             font-size: 20px;
@@ -42,7 +42,7 @@
         }
         .text-kota {
             position: absolute;
-            top: 280px;
+            top: 300px;
             left:330px;
             padding: 10px;
             color: orange;
@@ -52,13 +52,13 @@
         }
         .text-valid {
             position: absolute;
-            top: 280px;
+            top: 300px;
             left:540px;
             padding: 10px;
             color: orange;
             font-size: 20px;
             font-family: "Roboto, sans-serif";
-            text-align: left; /* Teks rata kiri */
+            text-align: left;
         }
         .avatar {
             position: absolute;
@@ -76,7 +76,7 @@
 <body>
 <div class="container">
     <img class="image" src="{{ url('assets_backend/kartu3.png') }}" alt="Gambar Anda">
-        <img src="{{ url('assets_backend/kartu3.png') }}" alt="" class="avatar">
+        <img src="{{ url('assets_backend/'.$profile->profiles->photo) }}" alt="" class="avatar">
     <div class="text-label">
         {{ strtoupper($profile->name) }}</div>
     <div class="text-email">

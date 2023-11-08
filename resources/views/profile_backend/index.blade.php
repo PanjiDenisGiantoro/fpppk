@@ -10,7 +10,8 @@
                             <div class="box-header d-flex justify-content-between">
                                 <div class="">
                                     <a href="#">
-                                        <img src="assets_backend/images/logo.png" alt="" style=" max-width: 100%;height: auto;">
+                                        <img src="assets_backend/images/logo.png" alt=""
+                                             style=" max-width: 100%;height: auto;">
                                     </a>
                                 </div>
                                 <div class="action-reg">
@@ -38,7 +39,14 @@
                                         <div class="mb-3">
                                             <label class="form-label mb-14">Nama</label>
                                             <input type="text" class="form-control" id="username" name="username"
+                                                   onkeyup="myFunction()"
                                                    placeholder="Your Name" value="{{ Auth::user()->name }}" autofocus>
+                                        </div>
+                                        <div class="mb-3 mt-24">
+                                            <label class="form-label mb-14">Gelar</label>
+                                            <input type="text" class="form-control" id="gelar" name="gelar"
+                                                   placeholder="S.Pd" value="{{ $user->profiles->gelar ?? '' }}"
+                                                   autofocus>
                                         </div>
                                         <div class="mb-3 mt-24">
                                             <label for="useremail" class="form-label mb-14">E-Mail</label>
@@ -49,7 +57,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3  mt-24">
-                                            <label class="form-label mb-14">Gelar</label>
+                                            <label class="form-label mb-14">Pendidikan</label>
                                             <select name="degree" id="degree" class="form-control select2">
 
                                                 @if(empty($user->profiles))
@@ -120,7 +128,6 @@
                                             <label class="form-label mb-14">Tanggal Lahir</label>
                                             <input type="date" class="form-control" id="date_of_birth"
                                                    value="{{ $user->profiles->date_of_birth ?? '' }}"
-
                                                    name="date_of_birth">
                                         </div>
 
@@ -284,7 +291,7 @@
                                                                 selected
                                                         @endif
 
-                                                    >PPPK
+                                                    >ASN PPPK
                                                     </option>
                                                     <option value="Honorer"
                                                             @if(!empty($user->profiles->status == 'Honorer'))
@@ -294,38 +301,106 @@
                                                     </option>
                                                 </select>
                                         </div>
-                                        @if($user->profiles->status == 'PPPK')
-                                            <script>
-                                                $('.pppk').show();
-                                            </script>
+                                        @if(!empty($user->profile))
+                                            @if($user->profiles->status == 'PPPK')
+                                                <script>
+                                                    $(document).ready(function () {
+                                                        $('.pppk').show();
+                                                    });
+                                                </script>
+                                            @endif
+                                            @if($user->profiles->status == 'Honorer')
+                                                <script>
+                                                    $(document).ready(function () {
+
+                                                        $('.honorer').show();
+                                                    });
+                                                </script>
+                                            @endif
                                         @endif
-                                        @if($user->profiles->status == 'Honorer')
-                                            <script>
-                                                $(document).ready(function () {
-                                                    $('.honorer').show();
-                                                });
-                                            </script>
                                         @endif
-                                        @endif
-                                        <div class="mb-3  mt-24 pppk" style="display: none">
-                                            <label class="form-label mb-14">Tahun PPPK</label>
+                                        <div class="mb-3  mt-24 pppk"
+
+                                             @if(empty($user->profiles))
+                                                 style="display: none"
+                                             @else
+                                                 @if($user->profiles->status == 'PPPK')
+                                                     style="display: block"
+                                             @else
+                                                 style="display: none"
+                                            @endif
+                                            @endif
+
+                                        >
+                                            <label class="form-label mb-14">TA PPPK</label>
                                             <select name="tahun" id="tahun" class="form-control">
-                                                <option value="">Pilih</option>
-                                                <option value="2021">2021</option>
-                                                <option value="2022">2022</option>
-                                                <option value="2023">2023</option>
+
+                                                @if(!empty($user->profiles))
+
+                                                    <option value="2021"
+                                                            @if($user->profiles->tahun == '2021')
+                                                                selected
+                                                        @endif
+                                                    >2021
+                                                    </option>
+                                                    <option value="2022"
+                                                            @if($user->profiles->tahun == '2022')
+                                                                selected
+                                                        @endif
+                                                    >2022
+                                                    </option>
+                                                    <option value="2023"
+                                                            @if($user->profiles->tahun == '2023')
+                                                                selected
+                                                        @endif
+                                                    >2023
+                                                    </option>
+                                                @else
+                                                    <option value="">Pilih</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2022">2022</option>
+                                                    <option value="2023">2023</option>
+                                                @endif
                                             </select>
                                         </div>
-                                        <div class="mb-3  mt-24 guru" style="display: none">
+                                        <div class="mb-3  mt-24 guru"
+                                             @if(empty($user->profiles))
+                                                 style="display: none"
+                                             @else
+                                                 @if($user->profiles->status == 'Honorer')
+                                                     style="display: block"
+                                             @else
+                                                 style="display: none"
+                                            @endif
+                                            @endif
+                                        >
                                             <label class="form-label mb-14">Tipe Guru</label>
                                             <select name="tipe" id="tipe" class="form-control">
+
+                                                @if(!empty($user->profiles))
+                                                @if($user->profiles->tipe == 'Guru Mapel')
+                                                    <option value="Guru Mapel"
+                                                            @if($user->profiles->tipe == 'Guru Mapel')
+                                                                selected
+                                                        @endif
+                                                    >Guru Mapel
+                                                    </option>
+                                                    <option value="Guru Kelas"
+                                                            @if($user->profiles->tipe == 'Guru Kelas')
+                                                                selected
+                                                        @endif
+                                                    >Guru Kelas
+                                                    </option>
+                                                @else
                                                 <option value="Pilih">Pilih</option>
-                                                <option value="mapel">Guru Mapel</option>
-                                                <option value="kelas">Guru Kelas</option>
+                                                <option value="Guru Mapel">Guru Mapel</option>
+                                                <option value="Guru Kelas">Guru Kelas</option>
+                                                    @endif
+                                                    @endif
                                             </select>
                                         </div>
                                         <div class="mb-3  mt-24">
-                                            <label class="form-label mb-14">No Telp</label>
+                                            <label class="form-label mb-14">No Telepon</label>
                                             <input type="text" class="form-control" name="phone_number"
                                                    value="{{ $user->profiles->phone_number ?? '' }}"
                                                    id="phone_number">
@@ -361,11 +436,13 @@
                                                    value="{{ $user->profiles->telegram ?? '' }}">
                                         </div>
                                         <div class="mb-3  mt-24">
-                                            <label class="form-label mb-14">Foto <span style="font-size: 12px;color: red">Ukuran gambar 500 KB</span></label>
-                                            <input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="250000000" />
-                                            <input type="file" class="form-control" name="foto" id="foto" accept="image/*" onchange="loadFile(event)">
+                                            <label class="form-label mb-14">Foto <span
+                                                    style="font-size: 12px;color: red">Ukuran gambar 500 KB</span></label>
+                                            <input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="250000000"/>
+                                            <input type="file" class="form-control" name="foto" id="foto"
+                                                   accept="image/*" onchange="loadFile(event)">
                                         </div>
-                                            <img id="output" width="100" height="100" />
+                                        <img id="output" width="100" height="100"/>
                                         <div class="mb-3 mt-29">
 
                                             <button
@@ -419,14 +496,24 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        $(document).ready(function () {
-            $('.select2').select2();
 
+        function myFunction() {
+            var x = document.getElementById("username");
+            x.value = x.value.toUpperCase();
+        }
+
+        function myFunction_gelar() {
+            var x = document.getElementById("gelar");
+            x.value = x.value.toUpperCase();
+        }
+
+        $(document).ready(function () {
+            // $('.select2').select2();
         });
-        var loadFile = function(event) {
+        var loadFile = function (event) {
             var output = document.getElementById('output');
             output.src = URL.createObjectURL(event.target.files[0]);
-            output.onload = function() {
+            output.onload = function () {
                 URL.revokeObjectURL(output.src) // free memory
             }
         };

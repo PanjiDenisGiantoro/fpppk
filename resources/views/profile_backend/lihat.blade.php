@@ -11,10 +11,10 @@
                     <div class="box-body">
                         <div class="user-pic text-center">
                             <div class="avatar ">
-                                <img src="foto/{{$profile->profiles->photo ?? ''}}" alt="" style="width: 200px">
+                                <img src="foto/{{$profile->profiles->photo ?? ''}}" alt="" style="width: 150px;height:150px">
                             </div>
                             <div class="pro-user mt-3">
-                                <h5 class="pro-user-username text-dark mb-2 fs-15 mt-42 color-span">{{ $profile->name }}</h5>
+                                <h5 class="pro-user-username text-dark mb-2 fs-15 mt-42 color-span">{{ $profile->name }} {{ $profile->profiles->gelar ?? '' }}</h5>
                                 <h6 class="pro-user-desc text-muted fs-14">{{ $profile->email }}</h6>
                             </div>
                         </div>
@@ -109,14 +109,14 @@
                                             @if ($profile->profiles->status == 'PNS')
                                                 PNS
                                             @elseif($profile->profiles->status == 'PPPK')
-                                                PPPK ({{ $profile->profiles->tahun }})
+                                                ASN PPPK ({{ $profile->profiles->tahun }})
                                             @elseif($profile->profiles->status == 'Honorer')
                                                 Honorer ({{ $profile->profiles->tipe }})
                                             @endif
                                         </span> </td>
                                 </tr>
                                 <tr>
-                                    <td class="py-2 px-0"> <span class="w-50">No Hp</span> </td>
+                                    <td class="py-2 px-0"> <span class="w-50">No Telepon</span> </td>
                                     <td>:</td>
                                     <td class="py-2 px-0"> <span class="">{{ $profile->profiles->phone_number ?? '-' }}</span> </td>
                                 </tr>
