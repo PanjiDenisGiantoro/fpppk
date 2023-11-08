@@ -77,11 +77,7 @@
                                     <td>:</td>
                                     <td class="py-2 px-0"> <span class="">{{ $provinsi->name ?? '' }}</span> </td>
                                 </tr>
-                                <tr>
-                                    <td class="py-2 px-0"> <span class="w-50">Kecamatan</span> </td>
-                                    <td>:</td>
-                                    <td class="py-2 px-0"> <span class="">{{ $provinsi->name ?? '' }}</span> </td>
-                                </tr>
+
                                 <tr>
                                     <td class="py-2 px-0"> <span class="w-50">Kota</span> </td>
                                     <td>:</td>

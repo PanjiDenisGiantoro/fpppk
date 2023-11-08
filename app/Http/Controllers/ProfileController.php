@@ -185,6 +185,7 @@ class ProfileController extends Controller
         } else {
             $nama_file = $profiles->profiles->photo;
         }
+//        dd($request->all());
         $data = Profile::where('user_id', auth()->user()->id)->first()->update([
             'user_id' => auth()->user()->id,
             'degree' => $request->degree,
