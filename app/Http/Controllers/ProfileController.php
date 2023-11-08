@@ -185,6 +185,10 @@ class ProfileController extends Controller
 
 
         if ($request->hasFile('foto')) {
+            if($request->file('foto')->getSize() > 500000){
+                Alert::error('Gagal', 'Ukuran File Terlalu Besar');
+                return redirect()->back();
+            }
             $file = $request->file('foto');
             $nama_file = time() . "_" . $file->getClientOriginalName();
             $tujuan_upload = 'foto';
