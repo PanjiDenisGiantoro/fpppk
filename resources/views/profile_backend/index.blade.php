@@ -16,10 +16,7 @@
                                 </div>
                                 <div class="action-reg">
                                     <h4 class="fs-30">Register</h4>
-                                    @if(!empty($user->profiles))
-                                        <a href="{{ url('cetak1') }}"
-                                           class="btn btn-primary">Cetak Kartu</a>
-                                    @endif
+
                                 </div>
 
                             </div>

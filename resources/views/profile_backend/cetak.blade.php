@@ -20,6 +20,10 @@
         }
 
         .text-label {
+            @if($profile->profiles->is_valid == 0)
+filter: blur(8px);
+            -webkit-filter: blur(8px);
+            @endif
             position: absolute;
             top: 250px;
             left:40px;
@@ -31,6 +35,10 @@
             text-align: left; /* Teks rata kiri */
         }
         .text-email {
+            @if($profile->profiles->is_valid == 0)
+filter: blur(8px);
+            -webkit-filter: blur(8px);
+            @endif
             position: absolute;
             top: 287px;
             left:40px;
@@ -41,6 +49,10 @@
             text-align: left; /* Teks rata kiri */
         }
         .text-kota {
+            @if($profile->profiles->is_valid == 0)
+filter: blur(8px);
+            -webkit-filter: blur(8px);
+            @endif
             position: absolute;
             top: 287px;
             left:330px;
@@ -51,6 +63,10 @@
             text-align: left; /* Teks rata kiri */
         }
         .text-valid {
+            @if($profile->profiles->is_valid == 0)
+filter: blur(8px);
+            -webkit-filter: blur(8px);
+            @endif
             position: absolute;
             top: 287px;
             left:540px;
@@ -61,6 +77,10 @@
             text-align: left; /* Teks rata kiri */
         }
         .avatar {
+            @if($profile->profiles->is_valid == 0)
+filter: blur(8px);
+            -webkit-filter: blur(8px);
+            @endif
             position: absolute;
             top: 25px;
             left:450px;

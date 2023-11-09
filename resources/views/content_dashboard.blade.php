@@ -885,10 +885,6 @@
                                                 </div>
                                                 <div class="action-reg">
                                                     <h4 class="fs-30">Register</h4>
-                                                    @if(!empty($user->profiles))
-                                                        <a href="{{ url('cetak1') }}"
-                                                           class="btn btn-primary">Cetak Kartu</a>
-                                                    @endif
                                                 </div>
 
                                             </div>
@@ -1116,6 +1112,23 @@
                                                             <label class="form-label mb-14">Kabupaten / Kota</label>
                                                             <select class="form-control select2" name="city_id" id="kota">
                                                                 <option value="">Pilih</option>
+                                                                @if(!empty($user->profiles->city_id))
+                                                                    @php
+                                                                        $city =   \Illuminate\Support\Facades\DB::table('indonesia_cities')->where('id', $user->profiles->city_id)->first(
+                                                                          );
+                                                                        $cityget =  \Illuminate\Support\Facades\DB::table('indonesia_cities')->where('province_code', $city->province_code)->get(
+                                                                          );
+
+                                                                    @endphp
+                                                                    @foreach($cityget as $get)
+                                                                        <option value="{{ $get->id }}"
+                                                                                @if($user->profiles->city_id == $get->id)
+                                                                                    selected
+                                                                            @endif
+                                                                        >{{ $get->name }}</option>
+
+                                                                    @endforeach
+                                                                @endif
                                                             </select>
 
                                                         </div>
@@ -1123,6 +1136,24 @@
                                                             <label class="form-label mb-14">Kecamatan</label>
                                                             <select class="form-control select2" name="district_id" id="kecamatan">
                                                                 <option value="">Pilih</option>
+
+                                                                @if(!empty($user->profiles->district_id))
+                                                                    @php
+                                                                        $kecam =   \Illuminate\Support\Facades\DB::table('indonesia_districts')->where('id', $user->profiles->district_id)->first(
+                                                                          );
+                                                                        $district_get =  \Illuminate\Support\Facades\DB::table('indonesia_districts')->where('city_code', $kecam->city_code)->get(
+                                                                          );
+
+                                                                    @endphp
+                                                                    @foreach($district_get as $get)
+                                                                        <option value="{{ $get->id }}"
+                                                                                @if($user->profiles->district_id == $get->id)
+                                                                                    selected
+                                                                            @endif
+                                                                        >{{ $get->name }}</option>
+
+                                                                    @endforeach
+                                                                @endif
                                                             </select>
                                                         </div>
                                                         <div class="mb-3  mt-24">
@@ -1130,6 +1161,22 @@
 
                                                             <select class="form-control select2" name="village_id" id="desa">
                                                                 <option value="">Pilih</option>
+                                                                @if(!empty($user->profiles->village_id))
+                                                                    @php
+                                                                        $villa =   \Illuminate\Support\Facades\DB::table('indonesia_villages')->where('id', $user->profiles->village_id)->first(
+                                                                          );
+                                                                        $vvilla_get =  \Illuminate\Support\Facades\DB::table('indonesia_villages')->where('district_code', $villa->district_code)->get(
+                                                                          );
+                                                                    @endphp
+                                                                    @foreach($vvilla_get as $get)
+                                                                        <option value="{{ $get->id }}"
+                                                                                @if($user->profiles->village_id == $get->id)
+                                                                                    selected
+                                                                            @endif
+                                                                        >{{ $get->name }}</option>
+
+                                                                    @endforeach
+                                                                @endif
                                                             </select>
                                                         </div>
                                                         <div class="mb-3  mt-24">
@@ -1305,10 +1352,12 @@
                                                                    value="{{ $user->profiles->telegram ?? '' }}">
                                                         </div>
                                                         <div class="mb-3  mt-24">
-                                                            <label class="form-label mb-14">Foto <span
-                                                                    style="font-size: 12px;color: red">Ukuran gambar 500 KB</span></label>
+                                                            <label class="form-label mb-14">Foto
+                                                                {{--                                                <span--}}
+                                                                {{--                                                    style="font-size: 12px;color: red">Ukuran gambar 500 KB</span>--}}
+                                                            </label>
                                                             <input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="250000000"/>
-                                                            <input type="file" class="form-control" name="foto" id="foto"
+                                                            <input type="file" class="form-control" name="foto" id="inputImageFile"
                                                                    accept="image/*" onchange="loadFile(event)">
                                                         </div>
                                                         <img id="output" width="100" height="100"/>

@@ -173,7 +173,9 @@
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <iframe id="modalIframe" src=""></iframe>
+                        @if($profile->profiles->is_valid == 1)
                         <a href="{{ url('cetak1') }}" class="btn btn-primary btn-block mt-3 ">Cetak kartu</a>
+                        @endif
                     </div>
                 </div>
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
