@@ -25,5 +25,6 @@
     <link rel="stylesheet" href="assets_backend/libs/date-picker/datepicker.css">
     <link rel="stylesheet" href="assets_backend/libs/datatable/css/dataTables.bootstrap5.css">
     <link rel="stylesheet" href="assets_backend/libs/rating/css/rating-themes.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <!-- APP CSS -->
 </head>

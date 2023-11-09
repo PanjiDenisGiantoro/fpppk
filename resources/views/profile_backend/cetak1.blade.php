@@ -25,10 +25,6 @@
             left: 40px;
             color: black;
             padding: 10px;
-            @if($profile->profiles->is_valid == 0)
-            filter: blur(8px);
-            -webkit-filter: blur(8px);
-            @endif
              font-size: 30px;
             font-weight: bold;
             font-family: 'Poppins', 'Roboto', sans-serif;
@@ -86,10 +82,7 @@ filter: blur(8px);
             left: 490px;
             width: 200px;
             height: 200px;
-            @if($profile->profiles->is_valid == 0)
-             filter: blur(8px);
-            -webkit-filter: blur(8px);
-            @endif
+
              border-radius: 60%;
             background-size: cover;
             border: 4px solid #febc58;
