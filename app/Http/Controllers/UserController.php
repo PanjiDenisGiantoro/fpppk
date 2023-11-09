@@ -37,10 +37,11 @@ class UserController extends Controller
 
         $datas = [
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
-            'sender' => '6289522900800',
+            'sender' => '6285880255326',
             'number' => $user->wa,
             'message' => '
-Selamat data anda Berhasil di verifikasi menjad anggota FPPPK Kabupaten Bogor dengan nomor anggota anda adalah '.$user->NRA.'. Harap download dan cetak kartu anggota anda dan silahkan bergabung ke grup WhatsApp dengan link berikut
+Selamat keanggotaan anda telah berhasil diaktivasi menjadi anggota FPPPK Kabupaten Bogor dengan nomor anggota *'.$user->NRA.'*. Harap download dan cetak kartu anggota ini
+ dan silahkan bergabung ke grup whatsApp kami dengan link berikut
 Terima Kasih,  Salam Perjuangan.',
         ];
         $curl = curl_init();
