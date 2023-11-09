@@ -39,12 +39,12 @@ class UserController extends Controller
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
             'sender' => '6285880255326',
             'number' => $user->wa,
-            'message' => '
-Selamat keanggotaan anda telah berhasil diaktivasi menjadi anggota FPPPK Kabupaten Bogor dengan nomor anggota *'.$user->NRA.'*. Harap download dan cetak kartu anggota ini
+            'message' => 'Selamat keanggotaan anda telah berhasil diaktivasi menjadi anggota FPPPK Kabupaten Bogor dengan nomor anggota *'.$user->NRA.'*. Harap download dan cetak kartu anggota ini
  dan silahkan bergabung ke grup whatsApp kami dengan link berikut
 Terima Kasih,  Salam Perjuangan.',
             'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
-            'type' => 'image'//Choose One
+            'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
+            'type' => 'image'
         ];
         $curl = curl_init();
 
