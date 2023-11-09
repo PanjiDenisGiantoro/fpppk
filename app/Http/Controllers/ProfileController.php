@@ -101,7 +101,9 @@ class ProfileController extends Controller
             Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini
             Terima kasih',
             'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
-            'type' => 'image'//Choose One
+            'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
+            'type' => 'image',
+
         ];
         $curl = curl_init();
 

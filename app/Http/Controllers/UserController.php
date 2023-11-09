@@ -26,7 +26,7 @@ class UserController extends Controller
     {
         $user = Profile::with('user','kecamatan')->where('id',$id)->first();
 
-        return view('admin.show', compact('user','provinsi','kota','kecamatan','desa'));
+        return view('admin.show', compact('user'));
     }
     public function update($id)
     {
@@ -36,20 +36,21 @@ class UserController extends Controller
         ]);
 
         $datas = [
+            'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
+            'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
+            'type' => 'image',
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
             'sender' => '6285880255326',
             'number' => $user->wa,
-            'message' => 'Selamat keanggotaan anda telah berhasil diaktivasi menjadi anggota FPPPK Kabupaten Bogor dengan nomor anggota *'.$user->NRA.'*. Harap download dan cetak kartu anggota ini
- dan silahkan bergabung ke grup whatsApp kami dengan link berikut
-Terima Kasih,  Salam Perjuangan.',
-            'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
-            'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
-            'type' => 'image'
+            'message' => 'Selamat keanggotaan anda telah berhasil diaktivasi menjadi anggota FPPPK Kabupaten Bogor dengan nomor anggota *'.$user->NRA.'*.'
+                .' Harap masuk ke menu FPPPK di dalam aplikasi GuruPRO login dengan akun anda.Silahkan download dan cetak kartu KTA Digital Anda '
+                .'dan silahkan bergabung ke grup whatsApp kami dengan link berikut Terima Kasih,  Salam Perjuangan.',
+
         ];
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://awas.proudit-system.com/send-message',
+            CURLOPT_URL => 'https://awas.proudit-system.com/send-media',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
