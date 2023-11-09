@@ -299,7 +299,7 @@
                                 <input type="password" name="password" required autocomplete="current-password">
                             </div>
                             <div class="field padding-bottom--24">
-                                <input type="submit" name="submit" value="Continue">
+                                <input type="submit" name="submit" value="Login">
                             </div>
 
                             <x-validation-errors class="mb-4" />
@@ -313,11 +313,11 @@
                     </div>
                 </div>
                 <div class="footer-link padding-top--24">
-                    <span>Don't have an account? <a href="{{ url('register') }}">Sign up</a></span>
+                    <span>Belum Ada Akun  <a href="{{ url('register') }}">Daftar Akun</a></span>
                     <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
-                        <span><a href="#">© Desa Tech Nusantara</a></span>
-                        <span><a href="#">Contact</a></span>
-                        <span><a href="#">Privacy & terms</a></span>
+                        <span><a href="https://gurupro.id">© Desa Tech Nusantara</a></span>
+                        <span><a href="https://gurupro.id">Contact</a></span>
+                        <span><a href="https://gurupro.id">Privacy & terms</a></span>
                     </div>
                 </div>
             </div>
