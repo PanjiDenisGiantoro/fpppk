@@ -31,6 +31,7 @@ Route::prefix('profile')->group(function(){
 });
 Route::prefix('user')->group(function(){
     Route::get('/',[\App\Http\Controllers\UserController::class,'index'])->name('user.index');
+    Route::get('/user/{id}',[\App\Http\Controllers\UserController::class,'show'])->name('user.show');
 });
 Route::get('/lihat',[\App\Http\Controllers\ProfileController::class,'view'])->name('profile.view');
 Route::get('/cetak1',[\App\Http\Controllers\ProfileController::class,'show'])->name('profile.show1');

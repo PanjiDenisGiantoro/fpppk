@@ -17,4 +17,9 @@ class UserController extends Controller
             ->latest()->get();
         return view('admin.index', compact('user','valid','novalid'));
     }
+    public function show($id)
+    {
+        $user = Profile::with('user','kecamatan')->where('id',$id)->first();
+        return view('admin.show', compact('user'));
+    }
 }

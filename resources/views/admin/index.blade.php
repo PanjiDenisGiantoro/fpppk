@@ -110,14 +110,7 @@
                                                         </span>
                                                     </td>
                                                     <td>
-                                                        <div class="dropdown">
-                                                            <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <i class='bx bx-dots-horizontal-rounded'></i>
-                                                            </a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="bx bx-trash"></i> Aktifasi</a>
-                                                            </div>
-                                                        </div>
+                                                        <a href="{{ url('user/'.$list->id) }}" class="btn btn-sm btn-primary">Detail</a>
                                                     </td>
                                                 </tr>
 
