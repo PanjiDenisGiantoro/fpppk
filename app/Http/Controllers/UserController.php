@@ -43,6 +43,8 @@ class UserController extends Controller
 Selamat keanggotaan anda telah berhasil diaktivasi menjadi anggota FPPPK Kabupaten Bogor dengan nomor anggota *'.$user->NRA.'*. Harap download dan cetak kartu anggota ini
  dan silahkan bergabung ke grup whatsApp kami dengan link berikut
 Terima Kasih,  Salam Perjuangan.',
+            'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
+            'type' => 'image'//Choose One
         ];
         $curl = curl_init();
 

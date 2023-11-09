@@ -100,11 +100,13 @@ class ProfileController extends Controller
             Harap tunggu 1 x 24 jam data Anda sedang diverifikasi .
             Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini
             Terima kasih',
+            'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
+            'type' => 'image'//Choose One
         ];
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://awas.proudit-system.com/send-message',
+            CURLOPT_URL => 'https://awas.proudit-system.com/send-media',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
