@@ -97,15 +97,15 @@ class ProfileController extends Controller
             'sender' => '6285880255326',
             'number' => $request->wa,
             'message' => 'Terima kasih telah mendaftar menjadi anggota FPPPK Kabupaten Bogor. Berikut adalah kode registrasi online Anda : *'. $data->NRA .'* Harap tunggu 1 x 24 jam data Anda sedang diverifikasi . Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini. Terima kasih',
-            'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
-            'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
-            'type' => 'image',
+            // 'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
+            // 'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
+            // 'type' => 'image',
 
         ];
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://awas.proudit-system.com/send-media',
+            CURLOPT_URL => 'https://awas.proudit-system.com/send-message',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

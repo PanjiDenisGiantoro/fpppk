@@ -19,7 +19,7 @@
 
 
             <li>
-                <a href="#">
+                <a href="{{ URL::to('dashboard') }}">
                     <i class='bx bxs-dashboard'></i>
                     <span>Dashboard</span>
                 </a>

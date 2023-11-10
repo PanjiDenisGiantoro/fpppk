@@ -36,9 +36,9 @@ class UserController extends Controller
         ]);
 
         $datas = [
-            'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
-            'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
-            'type' => 'image',
+            // 'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
+            // 'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
+            // 'type' => 'text',
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
             'sender' => '6285880255326',
             'number' => $user->wa,
@@ -47,7 +47,7 @@ class UserController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://awas.proudit-system.com/send-media',
+            CURLOPT_URL => 'https://awas.proudit-system.com/send-message',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -62,7 +62,6 @@ class UserController extends Controller
         ));
 
         $response = curl_exec($curl);
-
         curl_close($curl);
 
         Alert::success('Berhasil', 'Data berhasil di verifikasi');
