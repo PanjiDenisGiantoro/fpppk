@@ -30,6 +30,12 @@ class ProfileController extends Controller
     {
         $nra = $request->nra;
         $profile = Profile::where('NRA', $nra)->first();
+        if($nra == ''){
+            return response()->json([
+                'status' => 'tidakada',
+                'data' => 'Data tidak ditemukan'
+            ]);
+        }
         if ($profile) {
             return response()->json([
                 'status' => 'success',
