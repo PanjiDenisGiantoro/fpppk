@@ -1403,6 +1403,7 @@
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">No Whatsapp </label>
+                                                    <p id="notifwa"></p>
                                                     <input type="text" class="form-control" name="wa" id="wa" required
                                                            value="{{ $user->profiles->wa ?? '' }}">
                                                 </div>
@@ -1537,11 +1538,7 @@
                     },
                     success: function (response) {
                         if (response.status == 'tidakada') {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'Nomor WA sudah terdaftar!',
-                            })
+                            $('#notifwa').html('Nomor Whatsapp Tersedia');
                             $('#wa').val('');
                         }
                     },
