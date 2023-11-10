@@ -79,7 +79,6 @@
                                                 <tbody>
                                                 @php($no = 1)
                                                 @foreach($user as $list)
-
                                                     <tr class="odd">
                                                         <td class="text-center">{{$no++}}</td>
                                                         <td>
@@ -140,7 +139,7 @@
                                                                                    id="username" name="username"disabled
                                                                                    onkeyup="myFunction()"
                                                                                    placeholder="Your Name"
-                                                                                   value="{{ Auth::user()->name }}"
+                                                                                   value="{{ $list->user->name ?? '' }}"
                                                                                    autofocus>
                                                                         </div>
                                                                         <div class="mb-3 mt-24">
@@ -158,7 +157,7 @@
                                                                             <input type="email" class="form-control"
                                                                                    id="email" name="email"disabled
                                                                                    placeholder="Your Email"
-                                                                                   value="{{ Auth::user()->email }}">
+                                                                                   value="{{ $list->user->email }}">
                                                                             <div class="invalid-feedback">
                                                                                 Please Enter Email
                                                                             </div>
@@ -515,6 +514,13 @@
                                                                                     @endif
                                                                                 @endif
                                                                             </select>
+                                                                        </div>
+                                                                        <div class="mb-3  mt-24">
+                                                                            <label class="form-label mb-14">Tempat Bertugas</label>
+                                                                            <input type="text" class="form-control"
+                                                                                   name="phone_number"disabled
+                                                                                   value="{{ $list->tempat_bertugas ?? '' }}"
+                                                                                   id="phone_number">
                                                                         </div>
                                                                         <div class="mb-3  mt-24">
                                                                             <label class="form-label mb-14">No
