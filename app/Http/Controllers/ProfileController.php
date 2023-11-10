@@ -53,7 +53,7 @@ class ProfileController extends Controller
         $max = User::max('id');
         $no_urut = sprintf("%04d", $max + 1);
 
-        if ($request->hasFile('foto') == 'false') {
+        if ($request->hasFile('foto')) {
             $file = $request->file('foto');
             $nama_file = time() . "_" . $file->getClientOriginalName();
             $tujuan_upload = 'foto';
@@ -181,7 +181,7 @@ class ProfileController extends Controller
         ]);
 
         $foto = $profiles->photo;
-        if ($request->hasFile('foto') == 'false') {
+        if ($request->hasFile('foto')) {
             $file = $request->file('foto');
             $nama_file = time() . "_" . $file->getClientOriginalName();
             $tujuan_upload = 'foto';
