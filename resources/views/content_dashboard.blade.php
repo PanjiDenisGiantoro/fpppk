@@ -905,17 +905,17 @@
                                                             <label class="form-label mb-14">Nama</label>
                                                             <input type="text" class="form-control" id="username" name="username"
                                                                    onkeyup="myFunction()"
-                                                                   placeholder="Your Name" value="{{ Auth::user()->name }}" autofocus>
+                                                                   placeholder="Your Name" value="{{ Auth::user()->name }}" autofocus >
                                                         </div>
                                                         <div class="mb-3 mt-24">
                                                             <label class="form-label mb-14">Gelar</label>
                                                             <input type="text" class="form-control" id="gelar" name="gelar"
                                                                    placeholder="S.Pd" value="{{ $user->profiles->gelar ?? '' }}"
-                                                                   autofocus>
+                                                                    required>
                                                         </div>
                                                         <div class="mb-3 mt-24">
                                                             <label for="useremail" class="form-label mb-14">E-Mail</label>
-                                                            <input type="email" class="form-control" id="email" name="email"
+                                                            <input type="email" class="form-control" id="email" name="email"required
                                                                    placeholder="Your Email" value="{{ Auth::user()->email }}">
                                                             <div class="invalid-feedback">
                                                                 Please Enter Email
@@ -923,7 +923,7 @@
                                                         </div>
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">Pendidikan</label>
-                                                            <select name="degree" id="degree" class="form-control select2">
+                                                            <select name="degree" id="degree" class="form-control select2" required>
 
                                                                 @if(empty($user->profiles))
                                                                     <option value="">Pilih</option>
@@ -983,7 +983,7 @@
                                                         </div>
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">Tempat Lahir</label>
-                                                            <input type="text" class="form-control" id="place"
+                                                            <input type="text" class="form-control" id="place"required
                                                                    placeholder="Tempat Lahir" name="place"
                                                                    value="{{ $user->profiles->place ?? '' }}"
                                                             >
@@ -991,14 +991,14 @@
 
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">Tanggal Lahir</label>
-                                                            <input type="date" class="form-control" id="date_of_birth"
+                                                            <input type="date" class="form-control" id="date_of_birth"required
                                                                    value="{{ $user->profiles->date_of_birth ?? '' }}"
                                                                    name="date_of_birth">
                                                         </div>
 
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">Jenis Kelamin</label>
-                                                            <select name="gender" id="gender" class="form-control select2">
+                                                            <select name="gender" id="gender" class="form-control select2"required>
                                                                 @if(empty($user->profiles->gender))
                                                                     <option value="">Pilih</option>
                                                                     <option value="L">Laki-laki</option>
@@ -1021,7 +1021,7 @@
                                                         </div>
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">Agama</label>
-                                                            <select name="religion" id="religion" class="form-control select2">
+                                                            <select name="religion" id="religion" class="form-control select2"required>
 
                                                                 @if(empty($user->profiles->religion))
                                                                     <option value="">Pilih</option>
@@ -1086,7 +1086,7 @@
                                                                 $provinces= $provinces->provinces();
                                                             @endphp
                                                             @if(empty($user->profiles->province_id))
-                                                                <select class="form-control select2" name="province_id" id="provinsi">
+                                                                <select class="form-control select2" name="province_id" id="provinsi"required>
                                                                     <option value="">==Pilih Salah Satu==</option>
                                                                     @foreach ($provinces as $item)
                                                                         <option
@@ -1110,7 +1110,7 @@
                                                         </div>
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">Kabupaten / Kota</label>
-                                                            <select class="form-control select2" name="city_id" id="kota">
+                                                            <select class="form-control select2" name="city_id" id="kota"required>
                                                                 <option value="">Pilih</option>
                                                                 @if(!empty($user->profiles->city_id))
                                                                     @php
@@ -1134,7 +1134,7 @@
                                                         </div>
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">Kecamatan</label>
-                                                            <select class="form-control select2" name="district_id" id="kecamatan">
+                                                            <select class="form-control select2" name="district_id" id="kecamatan"required>
                                                                 <option value="">Pilih</option>
 
                                                                 @if(!empty($user->profiles->district_id))
@@ -1159,7 +1159,7 @@
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">Kelurahan / Desa</label>
 
-                                                            <select class="form-control select2" name="village_id" id="desa">
+                                                            <select class="form-control select2" name="village_id" id="desa"required>
                                                                 <option value="">Pilih</option>
                                                                 @if(!empty($user->profiles->village_id))
                                                                     @php
@@ -1188,7 +1188,7 @@
                                                             <label class="form-label mb-14">Status</label>
                                                             @if(empty($user->profiles))
                                                                 <option value="">Pilih</option>
-                                                                <select name="status" id="status" class="form-control">
+                                                                <select name="status" id="status" class="form-control"required>
                                                                     <option value="">Pilih</option>
                                                                     <option value="PNS">ASN</option>
                                                                     <option value="PPPK">ASN PPPK</option>
@@ -1314,7 +1314,7 @@
 
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">Tempat Bertugas</label>
-                                                            <input type="text" class="form-control" name="tempat_bertugas"
+                                                            <input type="text" class="form-control" name="tempat_bertugas"required
                                                                    value="{{ $user->profiles->tempat_bertugas ?? '' }}"
                                                                    id="tempat_bertugas">
                                                         </div>
@@ -1326,7 +1326,7 @@
                                                         </div>
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">No Whatsapp</label>
-                                                            <input type="text" class="form-control" name="wa" id="wa"
+                                                            <input type="text" class="form-control" name="wa" id="wa"required
                                                                    value="{{ $user->profiles->wa ?? '' }}">
                                                         </div>
                                                         <div class="mb-3  mt-24">
