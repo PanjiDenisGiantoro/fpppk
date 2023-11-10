@@ -45,7 +45,6 @@ class UserController extends Controller
             'message' => 'Selamat keanggotaan anda telah berhasil diaktivasi menjadi anggota FPPPK Kabupaten Bogor dengan nomor anggota *'.$user->NRA.'*.'
                 .' Harap masuk ke menu FPPPK di dalam aplikasi GuruPRO login dengan akun anda.Silahkan download dan cetak kartu KTA Digital Anda '
                 .'dan silahkan bergabung ke grup whatsApp kami dengan link berikut Terima Kasih,  Salam Perjuangan.',
-
         ];
         $curl = curl_init();
 

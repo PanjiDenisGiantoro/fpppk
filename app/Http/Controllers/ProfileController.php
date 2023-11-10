@@ -38,8 +38,6 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $profiles = User::with('profiles')->where('id', auth()->user()->id)->first();
         $profiles->update([
             'name' => $request->username,
@@ -55,7 +53,7 @@ class ProfileController extends Controller
         $max = User::max('id');
         $no_urut = sprintf("%04d", $max + 1);
 
-        if ($request->hasFile('foto')) {
+        if ($request->hasFile('foto') == 'false') {
             $file = $request->file('foto');
             $nama_file = time() . "_" . $file->getClientOriginalName();
             $tujuan_upload = 'foto';
@@ -139,7 +137,6 @@ class ProfileController extends Controller
     {
         $profile = User::with('profiles')->where('id', auth()->user()->id)->first();
         $kecamatan = District::where('id', $profile->profiles->district_id)->first();
-
         $pdf = PDF::loadView('profile_backend.cetak', compact('profile', 'kecamatan'));
         return $pdf->download('invoice.pdf');
     }
