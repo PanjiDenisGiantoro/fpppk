@@ -1,6 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -54,6 +55,7 @@
         justify-content: center;
     }
     .box-root {
+        padding: 0 3%;
         box-sizing: border-box;
     }
     .flex-direction--column {
@@ -297,7 +299,7 @@
                             </div>
                             <div class="field padding-bottom--24">
                                 <div class="grid--50-50">
-                                    <label for="password">Password</label>
+                                    <label for="password">Password <i>(8 digit)</i></label>
                                 </div>
                                 <input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
                             </div>
@@ -308,7 +310,7 @@
                                 <input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
                             </div>
                             <div class="field padding-bottom--24">
-                                <input type="submit" name="submit" value="Continue">
+                                <input type="submit" name="submit" value="Lanjutkan">
                             </div>
 
                             <x-validation-errors class="mb-4" />
@@ -322,7 +324,7 @@
                     </div>
                 </div>
                 <div class="footer-link padding-top--24">
-                    <span>Silahkan Login | <a href="{{ url('login') }}">Sign In</a></span>
+                    <span>Silahkan Login | <a href="{{ url('login') }}">Disini</a></span>
                     <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
                         <span><a href="#">© Desa Tech Nusantara</a></span>
                         <span><a href="#">Contact</a></span>

@@ -1,6 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -54,7 +55,13 @@
         justify-content: center;
     }
     .box-root {
+        padding: 0 3%;
         box-sizing: border-box;
+    }
+    @media (max-width:640px) {
+        .box-root {
+            padding-top: 20%;
+        }
     }
     .flex-direction--column {
         -ms-flex-direction: column;
@@ -299,13 +306,13 @@
                                 <input type="password" name="password" required autocomplete="current-password">
                             </div>
                             <div class="field padding-bottom--24">
-                                <input type="submit" name="submit" value="Login">
+                                <input type="submit" name="submit" value="Masuk">
                             </div>
 
                             <x-validation-errors class="mb-4" />
 
                             @if (session('status'))
-                                <div class="mb-4 font-medium text-sm text-green-600">
+                                <div class="alert-danger mb-4 font-medium text-sm text-green-600">
                                     {{ session('status') }}
                                 </div>
                             @endif

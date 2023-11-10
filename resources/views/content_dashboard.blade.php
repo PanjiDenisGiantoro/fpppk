@@ -884,7 +884,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="action-reg">
-                                                    <h4 class="fs-30">Register</h4>
+                                                    <h4 class="fs-30">Pendaftaran</h4>
                                                 </div>
 
                                             </div>
@@ -1316,7 +1316,7 @@
                                                             <label class="form-label mb-14">Tempat Bertugas</label>
                                                             <input type="text" class="form-control" name="tempat_bertugas"required
                                                                    value="{{ $user->profiles->tempat_bertugas ?? '' }}"
-                                                                   id="tempat_bertugas">
+                                                                   id="tempat_bertugas" placeholder="SDN Merdeka 01">
                                                         </div>
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">No Telepon</label>
@@ -1361,8 +1361,15 @@
                                                             </label>
                                                             <input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="250000000"/>
                                                             <input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="250000000"/>
-                                                            <input type="file" class="form-control" name="foto" id="inputImageFile"
-                                                                   accept="image/*" >
+                                                            
+                                                            <input type="file" class="position-absolute form-control" name="foto" id="inputImageFile"
+                                                                   accept="image/*" style="opacity:0" onchange="changeFileInput(this)">
+                                                            <div id="fileView" class="form-control form-control-lg" style="color:#A8A8A8; background-color:#E7E7E7; font-size:1rem;">Unggah Gambar</div>
+                                                            <script>
+                                                                function changeFileInput(element) {
+                                                                    document.getElementById('fileView').innerHTML = element.files[0].name
+                                                                }
+                                                            </script>
                                                         </div>
                                                         <div class="mb-3 mt-29">
 

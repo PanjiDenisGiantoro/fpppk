@@ -77,7 +77,7 @@
                 <li>
                     <a href="{{ route('profile') }}">
                         <i class='bx bxs-dashboard'></i>
-                        <span>Profile</span>
+                        <span>Profil</span>
                     </a>
                 </li>
                 @php
@@ -100,7 +100,7 @@
                 <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
                     <div>
                         <i class='bx bx-cog mr-10'></i>
-                        <span>darkmode</span>
+                        <span>Mode Gelap</span>
                     </div>
 
                     <span class="darkmode-switch"></span>
