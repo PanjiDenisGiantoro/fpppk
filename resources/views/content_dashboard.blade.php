@@ -1310,6 +1310,14 @@
                                                                 @endif
                                                             </select>
                                                         </div>
+
+
+                                                        <div class="mb-3  mt-24">
+                                                            <label class="form-label mb-14">Tempat Bertugas</label>
+                                                            <input type="text" class="form-control" name="tempat_bertugas"
+                                                                   value="{{ $user->profiles->tempat_bertugas ?? '' }}"
+                                                                   id="tempat_bertugas">
+                                                        </div>
                                                         <div class="mb-3  mt-24">
                                                             <label class="form-label mb-14">No Telepon</label>
                                                             <input type="text" class="form-control" name="phone_number"

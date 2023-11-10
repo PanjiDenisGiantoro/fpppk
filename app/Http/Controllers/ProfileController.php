@@ -90,6 +90,7 @@ class ProfileController extends Controller
             'NRA' => '1022' . $kota . $no_urut_kota . $no_urut,
             'photo' => $nama_file,
             'valid_thru' => $bulan . '/' .$tahun ,
+            'tempat_bertugas' => $request->tempat_bertugas
         ]);
         $datas = [
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
@@ -213,7 +214,8 @@ class ProfileController extends Controller
             'linkedin' => $request->linkedin,
             'tiktok' => $request->tiktok,
             'telegram' => $request->telegram,
-            'photo' => $nama_file
+            'photo' => $nama_file,
+            'tempat_bertugas' => $request->tempat_bertugas
         ]);
 
         $profile = Profile::where('user_id', auth()->user()->id)->first();

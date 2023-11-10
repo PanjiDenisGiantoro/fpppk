@@ -113,6 +113,12 @@
                                             @endif
                                         </span> </td>
                                 </tr>
+
+                                <tr>
+                                    <td class="py-2 px-0"> <span class="w-50">Tempat Bertugas </span> </td>
+                                    <td>:</td>
+                                    <td class="py-2 px-0"> <span class="">{{ $profile->profiles->tempat_bertugas ??'' }}</span> </td>
+                                </tr>
                                 <tr>
                                     <td class="py-2 px-0"> <span class="w-50">No Telepon</span> </td>
                                     <td>:</td>
