@@ -86,7 +86,7 @@
                                                                 <span>{{ $list->NRA ?? ''}}</span> </a>
                                                         </td>
                                                         <td>{{ $list->user->name ?? ''}}</td>
-                                                        <td>{{ $list->user->email }}</td>
+                                                        <td>{{ $list->user->email ?? ''}}</td>
                                                         <td>{{ $list->wa ?? ''}}</td>
                                                         <td>
                                                             <div>
@@ -157,7 +157,7 @@
                                                                             <input type="email" class="form-control"
                                                                                    id="email" name="email"disabled
                                                                                    placeholder="Your Email"
-                                                                                   value="{{ $list->user->email }}">
+                                                                                   value="{{ $list->user->email ?? ''}}">
                                                                             <div class="invalid-feedback">
                                                                                 Please Enter Email
                                                                             </div>
