@@ -59,8 +59,9 @@ class ProfileController extends Controller
             $tujuan_upload = 'foto';
             $file->move($tujuan_upload, $nama_file);
         } else {
-            $nama_file = 'default.png';
+            $nama_file = $profiles->profiles->photo;
         }
+
         $data = Profile::create([
             'user_id' => auth()->user()->id,
             'degree' => $request->degree,
@@ -94,10 +95,7 @@ class ProfileController extends Controller
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
             'sender' => '6285880255326',
             'number' => $request->wa,
-            'message' => 'Terima kasih telah mendaftar menjadi anggota FPPPK Kabupaten Bogor. Berikut adalah kode registrasi online Anda : *'. $data->NRA .'*
-            Harap tunggu 1 x 24 jam data Anda sedang diverifikasi .
-            Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini
-            Terima kasih',
+            'message' => 'Terima kasih telah mendaftar menjadi anggota FPPPK Kabupaten Bogor. Berikut adalah kode registrasi online Anda : *'. $data->NRA .'* Harap tunggu 1 x 24 jam data Anda sedang diverifikasi . Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini. Terima kasih',
             'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
             'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
             'type' => 'image',
