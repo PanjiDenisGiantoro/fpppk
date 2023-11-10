@@ -1,7 +1,7 @@
 @extends('dashboard')
 @section('content')
     <style>
-        section.login .box-body{
+        section.login .box-body {
             padding: 0;
         }
     </style>
@@ -937,7 +937,7 @@
                                     <div class="mb-3 mt-3 nranumber">
                                         <label class="form-label mb-14">Masukkan NRA Anda <span></span></label>
                                         <input type="text" class="form-control" id="nra" name="nra"
-                                               placeholder="Masukkan NRA Anda" >
+                                               placeholder="Masukkan NRA Anda">
                                     </div>
                                     <div class="mb-3 mt-3 ">
                                         <button type="button" class="btn btn-primary btn-block" id="btnCheckNra">Cek
@@ -980,7 +980,8 @@
                                                 </div>
                                                 <div class="mb-3 mt-24">
                                                     <label for="useremail" class="form-label mb-14">E-Mail</label>
-                                                    <input type="email" class="form-control" id="email" name="email"required
+                                                    <input type="email" class="form-control" id="email" name="email"
+                                                           required
                                                            required
                                                            placeholder="Your Email" value="{{ Auth::user()->email }}">
                                                     <div class="invalid-feedback">
@@ -1407,28 +1408,33 @@
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">Facebook</label>
-                                                    <input type="text" class="form-control" name="fb" id="fb"placeholder="https://facebook.com/username"
+                                                    <input type="text" class="form-control" name="fb" id="fb"
+                                                           placeholder="https://facebook.com/username"
                                                            value="{{ $user->profiles->fb ?? '' }}">
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">Instagram</label>
-                                                    <input type="text" class="form-control" name="ig" id="ig"placeholder="https://instagram.com/username"
+                                                    <input type="text" class="form-control" name="ig" id="ig"
+                                                           placeholder="https://instagram.com/username"
                                                            value="{{ $user->profiles->ig ?? '' }}">
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">Tiktok</label>
-                                                    <input type="text" class="form-control" name="tiktok" id="tiktok"placeholder="https://tiktok.com/username"
+                                                    <input type="text" class="form-control" name="tiktok" id="tiktok"
+                                                           placeholder="https://tiktok.com/username"
                                                            value="{{ $user->profiles->tiktok ?? '' }}">
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">LinkedIn</label>
-                                                    <input type="text" class="form-control" name="linkedin" placeholder="https://linkedin.com/username"
+                                                    <input type="text" class="form-control" name="linkedin"
+                                                           placeholder="https://linkedin.com/username"
                                                            id="linkedin"
                                                            value="{{ $user->profiles->linkedin ?? '' }}">
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">Telegram</label>
-                                                    <input type="text" class="form-control" name="telegram" placeholder="https://telegram.com/username"
+                                                    <input type="text" class="form-control" name="telegram"
+                                                           placeholder="https://telegram.com/username"
                                                            id="telegram"
                                                            value="{{ $user->profiles->telegram ?? '' }}">
                                                 </div>
@@ -1519,32 +1525,34 @@
         $('.emptydata').hide();
 
 
-        $('#wa').on('keyup',(function(){
-            var wa = $(this).val();
-            var wa = wa.replace(/[^0-9]/g, '');
-            $(this).val(wa);
-            $.ajax({
-                type: "get",
-                url: "{{ route('profile.wa') }}",
-                data: {
-                    wa: $(this).val()
-                },
-                success: function (response) {
-                    if(response.status == 'tidakada'){
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Nomor WA sudah terdaftar!',
-                        })
-                        $('#wa').val('');
-                    }
-                },
-                error: function (response) {
+        $('#wa').on('keyup', function () {
+                var wa = $(this).val();
+                var wa = wa.replace(/[^0-9]/g, '');
+                $(this).val(wa);
+                $.ajax({
+                    type: "get",
+                    url: "{{ route('profile.wa') }}",
+                    data: {
+                        wa: $(this).val()
+                    },
+                    success: function (response) {
+                        if (response.status == 'tidakada') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Nomor WA sudah terdaftar!',
+                            })
+                            $('#wa').val('');
+                        }
+                    },
+                    error: function (response) {
 
-                }
+                    }
+                })
             })
-        }))
-        }
+
+
+
         $('#adas').on('change', function () {
             if ($(this).val() == '1') {
                 $('.nranumber').show();
@@ -1573,7 +1581,7 @@
         {{--        }--}}
         {{--    })--}}
         {{--})--}}
-        $('#btnCheckNra').on('click',function (){
+        $('#btnCheckNra').on('click', function () {
             $.ajax({
                 type: "get",
                 url: "{{ route('profile.check') }}",
@@ -1588,10 +1596,10 @@
                             title: 'Sukses',
                             text: 'NRA Ditemukan',
                         })
-                        $('#nra').attr('readonly',true);
+                        $('#nra').attr('readonly', true);
                         $('.emptydata').show();
                         $('#btnCheckNra').hide();
-                    }else if(response.status == 'tidakada') {
+                    } else if (response.status == 'tidakada') {
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
@@ -1599,14 +1607,14 @@
                         })
                         $('.emptydata').hide();
 
-                    }else if(response.status == 'error') {
+                    } else if (response.status == 'error') {
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
                             text: 'NRA Tidak Ditemukan!',
                         })
                         $('.emptydata').hide();
-                    }else {
+                    } else {
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
