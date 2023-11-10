@@ -80,7 +80,7 @@
 </head>
 <body>
 <div class="container">
-    <img class="image" src="{{ public_path('assets_backend/kartu4.png') }}" alt="Gambar Anda">
+    <img class="image" src="{{ public_path('assets_backend/kartu5.png') }}" alt="Gambar Anda">
         <img src="{{ public_path('foto/'.$profile->profiles->photo) }}" alt="" class="avatar">
     <div class="text-label">
         {{ strtoupper($profile->name) }} {{ $profile->profiles->gelar ?? '' }}</div>

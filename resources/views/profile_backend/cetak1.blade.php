@@ -92,7 +92,7 @@ filter: blur(8px);
 </head>
 <body>
 <div class="container">
-    <img class="image" src="{{ url('assets_backend/kartu4.png') }}" alt="Gambar Anda">
+    <img class="image" src="{{ url('assets_backend/kartu5.png') }}" alt="Gambar Anda">
     <img src="{{ url('foto/'.$profile->profiles->photo) }}" alt="" class="avatar">
     <div class="text-label">
         {{ strtoupper($profile->name) }} {{ $profile->profiles->gelar ?? '' }}</div>
