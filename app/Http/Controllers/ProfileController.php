@@ -137,7 +137,7 @@ class ProfileController extends Controller
         $profile = User::with('profiles')->where('id', auth()->user()->id)->first();
         $kecamatan = District::where('id', $profile->profiles->district_id)->first();
         $pdf = PDF::loadView('profile_backend.cetak', compact('profile', 'kecamatan'));
-        return $pdf->download('KTA.pdf');
+        return $pdf->download('KTA-FPPPK-'.$profile->profiles->NRA.'.pdf');
     }
 
     public function show1(Profile $profile)
