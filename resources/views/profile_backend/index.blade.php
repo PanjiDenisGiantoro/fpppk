@@ -426,7 +426,6 @@
                                             <select name="tipe" id="tipe" class="form-control">
 
                                                 @if(!empty($user->profiles))
-                                                @if($user->profiles->tipe == 'Guru Mapel')
                                                     <option value="Guru Mapel"
                                                             @if($user->profiles->tipe == 'Guru Mapel')
                                                                 selected
@@ -440,11 +439,10 @@
                                                     >Guru Kelas
                                                     </option>
                                                 @else
-                                                <option value="Pilih">Pilih</option>
-                                                <option value="Guru Mapel">Guru Mapel</option>
-                                                <option value="Guru Kelas">Guru Kelas</option>
-                                                    @endif
-                                                    @endif
+                                                    <option value="Pilih">Pilih</option>
+                                                    <option value="Guru Mapel">Guru Mapel</option>
+                                                    <option value="Guru Kelas">Guru Kelas</option>
+                                                @endif
                                             </select>
                                         </div>
                                         <div class="mb-3  mt-24">

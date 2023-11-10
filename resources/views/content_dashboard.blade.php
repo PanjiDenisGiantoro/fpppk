@@ -1228,7 +1228,6 @@
                                                             @if($user->profiles->status == 'Honorer')
                                                                 <script>
                                                                     $(document).ready(function () {
-
                                                                         $('.honorer').show();
                                                                     });
                                                                 </script>
@@ -1236,7 +1235,6 @@
                                                         @endif
                                                         @endif
                                                         <div class="mb-3  mt-24 pppk"
-
                                                              @if(empty($user->profiles))
                                                                  style="display: none"
                                                              @else
@@ -1250,7 +1248,6 @@
                                                         >
                                                             <label class="form-label mb-14">TA PPPK</label>
                                                             <select name="tahun" id="tahun" class="form-control">
-
                                                                 @if(!empty($user->profiles))
 
                                                                     <option value="2021"
@@ -1294,7 +1291,6 @@
                                                             <select name="tipe" id="tipe" class="form-control">
 
                                                                 @if(!empty($user->profiles))
-                                                                    @if($user->profiles->tipe == 'Guru Mapel')
                                                                         <option value="Guru Mapel"
                                                                                 @if($user->profiles->tipe == 'Guru Mapel')
                                                                                     selected
@@ -1311,7 +1307,6 @@
                                                                         <option value="Pilih">Pilih</option>
                                                                         <option value="Guru Mapel">Guru Mapel</option>
                                                                         <option value="Guru Kelas">Guru Kelas</option>
-                                                                    @endif
                                                                 @endif
                                                             </select>
                                                         </div>
