@@ -7,6 +7,8 @@
             align-items: center;
             width: 100vw;
             height: 100vh;
+            /* width: 100%;
+            height: 100%; */
             margin: 0;
         }
 
@@ -87,6 +89,36 @@ filter: blur(8px);
             background-size: cover;
             border: 4px solid #febc58;
             box-shadow: 0 0 0 5px #febc58;
+        }
+
+        @media (max-width:640px) {
+            .text-label {
+                top: 40%;
+                left: 5%;
+                font-size: 7px;
+            }
+            .text-email {
+                top: 50%;
+                left: 5%;
+                font-size: 7px;
+            }
+            .text-kota {
+                top: 50%;
+                left: 30%;
+                font-size: 7px;
+            }
+            .text-valid {
+                top: 50%;
+                left: 45%;
+                font-size: 7px;
+            }
+            .avatar {
+                top: 7%;
+                left: 65%;
+                width: 25%;
+                height: 40%;
+                border: 1px solid #febc58;
+            }
         }
     </style>
 </head>

@@ -27,4 +27,10 @@
     <link rel="stylesheet" href="assets_backend/libs/rating/css/rating-themes.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <!-- APP CSS -->
+
+    <style>
+        .modal {
+            z-index: 9999999999999999999;
+        }
+    </style>
 </head>
