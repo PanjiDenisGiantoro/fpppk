@@ -52,7 +52,7 @@ filter: blur(8px);
             -webkit-filter: blur(8px);
             @endif
             position: absolute;
-            top: 300px;
+            top: 310px;
             left: 330px;
             padding: 10px;
             color: orange;
@@ -67,7 +67,7 @@ filter: blur(8px);
             -webkit-filter: blur(8px);
             @endif
             position: absolute;
-            top: 300px;
+            top: 310px;
             left: 540px;
             padding: 10px;
             color: orange;
