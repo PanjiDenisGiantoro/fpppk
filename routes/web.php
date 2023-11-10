@@ -37,6 +37,7 @@ Route::prefix('user')->group(function(){
 Route::get('/lihat',[\App\Http\Controllers\ProfileController::class,'view'])->name('profile.view');
 Route::get('/cetak1',[\App\Http\Controllers\ProfileController::class,'show'])->name('profile.show1');
 Route::get('/cetak2',[\App\Http\Controllers\ProfileController::class,'show1'])->name('profile.show2');
+Route::get('/check',[\App\Http\Controllers\ProfileController::class,'check'])->name('profile.check');
 //area
 Route::get('provinces', [\App\Http\Controllers\AreaController::class,'provinces'])->name('provinces');
 Route::get('cities', [\App\Http\Controllers\AreaController::class,'cities'])->name('cities');

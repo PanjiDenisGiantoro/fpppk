@@ -15,8 +15,17 @@ class DashboardController extends Controller
 //            ->latest()->get();
         $valid = Profile::where('is_valid', 1)->count();
         $novalid = Profile::where('is_valid', 0)->count();
-        $user = User::with('profiles')->where('id', auth()->user()->id)->first();
 
-        return view('content_dashboard',compact('user','valid','novalid'));
+        if (auth()->user()->hasRole('admin')) {
+
+            $user = Profile::with('user','kecamatan','kotas','desas','provinces')->where('NRA','!=',null)
+                ->latest()->get();
+        } else {
+
+            $user = User::with('profiles')->where('id', auth()->user()->id)->first();
+        }
+
+
+        return view('content_dashboard', compact('user', 'valid', 'novalid'));
     }
 }

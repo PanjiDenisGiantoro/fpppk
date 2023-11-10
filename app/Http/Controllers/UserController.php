@@ -42,7 +42,7 @@ class UserController extends Controller
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
             'sender' => '6285880255326',
             'number' => $user->wa,
-            'message' => 'Selamat keanggotaan anda telah berhasil diaktivasi menjadi anggota FPPPK Kabupaten Bogor dengan nomor anggota *'.$user->NRA.'*.'.' Harap masuk ke menu FPPPK di dalam aplikasi GuruPRO login dengan akun anda.Silahkan download dan cetak kartu KTA Digital Anda '.'dan silahkan bergabung ke grup whatsApp kami dengan link berikut Terima Kasih,  Salam Perjuangan.',
+            'message' => 'Selamat keanggotaan anda telah berhasil diaktivasi. Anda terdaftar menjadi anggota FPPPK Kabupaten Bogor dengan nomor registrasi anggota *'.$user->NRA.'*.'.' Harap masuk ke menu FPPPK di dalam aplikasi. Silahkan download dan cetak kartu KTA Digital Anda. Bergabunglah dengan Grup whatsapp kami dengan mengklik link Berikut https://chat.whatsapp.com/C27ADPFIdsw4XAfFAMUUt3'.' Terima Kasih, Salam Sejahtera.',
         ];
         $curl = curl_init();
 

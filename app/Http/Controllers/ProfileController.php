@@ -26,6 +26,24 @@ class ProfileController extends Controller
         return view('profile_backend.index', compact('user'));
     }
 
+    public function check(Request $request)
+    {
+        $nra = $request->nra;
+        $profile = Profile::where('NRA', $nra)->first();
+        if ($profile) {
+            return response()->json([
+                'status' => 'success',
+                'data' => $profile
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'data' => 'Data tidak ditemukan'
+            ]);
+        }
+
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -43,129 +61,90 @@ class ProfileController extends Controller
         $kota = $request->district_id;
         $kta = DB::table('indonesia_districts')->where('id', $kota)->first();
 
-//        01 Cibinong
-//02 Gunung Putri
-//03 Citeureup
-//04 Sukaraja
-//05 Babakan Madang
-//06 Jonggol
-//07. Cileungsi
-//08 Cariu
-//09 Sukamakmur
-//10 Parung
-//11. Gunung Sindur
-//12. kemang
-//13. Bojong Gede
-//14. Leuwi liang
-//15. Ciampea
-//16. Cibungbulang
-//17  Pamijahan
-//18. Rumpin
-//19 Jasinga
-//20 Parung panjang
-//21 Cigudeg
-//22. Nanggung
-//23 Tenjo
-//24 Ciawi
-//25 Cisarua
-//26. Megamendung
-//27 Caringin
-//28 Cijeruk
-//29 Ciomas
-//30 Dramaga
-//31 Tamansari
-//32 Klapanunggal
-//33 Ciseeng
-//34 Rancabungur
-//35 Sukajaya
-//36. Tanjung sari
-//37  Tajur halang
-//38. Cigombong
-//39. Leuwisadeng
-//40 Tenjolaya
-        if (ucfirst($kta) == 'Jonggol'){
+        if (strtoupper($kta->name) == 'JONGGOL') {
             $kotas = '06';
-        }elseif (ucfirst($kta) == 'Cibinong'){
+        } elseif (strtoupper($kta->name) == 'CIBINONG') {
             $kotas = '01';
-        }elseif (ucfirst($kta) == 'Gunung Putri'){
+        } elseif (strtoupper($kta->name) == 'GUNUNG PUTRI') {
             $kotas = '02';
-        }elseif (ucfirst($kta) == 'Citeureup'){
+        } elseif (strtoupper($kta->name) == 'CITEUREUP') {
             $kotas = '03';
-        }elseif (ucfirst($kta) == 'Sukaraja'){
+        } elseif (strtoupper($kta->name) == 'SUKARAJA') {
             $kotas = '04';
-        }elseif (ucfirst($kta) == 'Babakan Madang'){
+        } elseif (strtoupper($kta->name) == 'BABAKAN MADANG') {
             $kotas = '05';
-        }elseif (ucfirst($kta) == 'Cileungsi'){
+        } elseif (strtoupper($kta->name) == 'CILEUNGSI') {
             $kotas = '07';
-        }elseif (ucfirst($kta) == 'Cariu'){
+        } elseif (strtoupper($kta->name) == 'CARIU') {
             $kotas = '08';
-        }elseif (ucfirst($kta) == 'Sukamakmur'){
+        } elseif (strtoupper($kta->name) == 'SUKAMAKMUR') {
             $kotas = '09';
-        }elseif (ucfirst($kta) == 'Parung'){
+        } elseif (strtoupper($kta->name) == 'PARUNG') {
             $kotas = '10';
-        }elseif (ucfirst($kta) == 'Gunung Sindur'){
+        } elseif (strtoupper($kta->name) == 'GUNUNG SINDUR') {
             $kotas = '11';
-        }elseif (ucfirst($kta) == 'Kemang'){
+        } elseif (strtoupper($kta->name) == 'KEMANG') {
             $kotas = '12';
-        }elseif (ucfirst($kta) == 'Bojong Gede'){
+        } elseif (strtoupper($kta->name) == 'BOJONG GEDE') {
             $kotas = '13';
-        }elseif (ucfirst($kta) == 'Leuwi Liang'){
+        } elseif (strtoupper($kta->name) == 'LEUWI LIANG') {
             $kotas = '14';
-        }elseif (ucfirst($kta) == 'Ciampea'){
+        } elseif (strtoupper($kta->name) == 'CIAMPEA') {
             $kotas = '15';
-        }elseif (ucfirst($kta) == 'Cibungbulang'){
+        } elseif (strtoupper($kta->name) == 'CIBUNGBULANG') {
             $kotas = '16';
-        }elseif (ucfirst($kta) == 'Pamijahan'){
+        } elseif (strtoupper($kta->name) == 'PAMIJAHAN') {
             $kotas = '17';
-        }elseif (ucfirst($kta) == 'Rumpin'){
+        } elseif (strtoupper($kta->name) == 'RUMPIN') {
             $kotas = '18';
-        }elseif (ucfirst($kta) == 'Jasinga'){
+        } elseif (strtoupper($kta->name) == 'JASINGA') {
             $kotas = '19';
-        }elseif (ucfirst($kta) == 'Parung Panjang'){
+        } elseif (strtoupper($kta->name) == 'PARUNG PANJANG') {
             $kotas = '20';
-        }elseif (ucfirst($kta) == 'Cigudeg'){
+        } elseif (strtoupper($kta->name) == 'CIGUDEG') {
             $kotas = '21';
-        }elseif (ucfirst($kta) == 'Nanggung'){
+        } elseif (strtoupper($kta->name) == 'NANGGUNG') {
             $kotas = '22';
-        }elseif (ucfirst($kta) == 'Tenjo'){
+        } elseif (strtoupper($kta->name) == 'TENJO') {
             $kotas = '23';
-        }elseif (ucfirst($kta) == 'Ciawi'){
+        } elseif (strtoupper($kta->name) == 'CIAWI') {
             $kotas = '24';
-        }elseif (ucfirst($kta) == 'Cisarua'){
+        } elseif (strtoupper($kta->name) == 'CISARUA') {
             $kotas = '25';
-        }elseif (ucfirst($kta) == 'Megamendung'){
+        } elseif (strtoupper($kta->name) == 'MEGAMENDUNG') {
             $kotas = '26';
-        }elseif (ucfirst($kta) == 'Caringin'){
+        } elseif (strtoupper($kta->name) == 'CARINGIN') {
             $kotas = '27';
-        }elseif (ucfirst($kta) == 'Cijeruk'){
+        } elseif (strtoupper($kta->name) == 'CIJERUK') {
             $kotas = '28';
-        }elseif (ucfirst($kta) == 'Ciomas'){
+        } elseif (strtoupper($kta->name) == 'CIOMAS') {
             $kotas = '29';
-        }elseif (ucfirst($kta) == 'Dramaga'){
+        } elseif (strtoupper($kta->name) == 'DRAMAGA') {
             $kotas = '30';
-        }elseif (ucfirst($kta) == 'Tamansari'){
+        } elseif (strtoupper($kta->name) == 'TAMANSARI') {
             $kotas = '31';
-        }elseif (ucfirst($kta) == 'Klapanunggal'){
+        } elseif (strtoupper($kta->name) == 'KLAPANUNGGAL') {
             $kotas = '32';
-        }elseif (ucfirst($kta) == 'Ciseeng'){
+        } elseif (strtoupper($kta->name) == 'CISEENG') {
             $kotas = '33';
-        }elseif (ucfirst($kta) == 'Rancabungur'){
+        } elseif (strtoupper($kta->name) == 'RANCABUNGUR') {
             $kotas = '34';
-        }elseif (ucfirst($kta) == 'Sukajaya'){
+        } elseif (strtoupper($kta->name) == 'SUKAJAYA') {
             $kotas = '35';
-        }elseif (ucfirst($kta) == 'Tanjung Sari'){
+        } elseif (strtoupper($kta->name) == 'TANJUNG SARI') {
             $kotas = '36';
-        }elseif (ucfirst($kta) == 'Tajur Halang'){
+        } elseif (strtoupper($kta->name) == 'TAJUR HALANG') {
             $kotas = '37';
-        }elseif (ucfirst($kta) == 'Cigombong'){
+        } elseif (strtoupper($kta->name) == 'CIGOMBONG') {
             $kotas = '38';
-        }elseif (ucfirst($kta) == 'Leuwisadeng'){
+        } elseif (strtoupper($kta->name) == 'LEUWISADENG') {
             $kotas = '39';
-        }elseif (ucfirst($kta) == 'Tenjolaya') {
+        } elseif (strtoupper($kta->name) == 'TENJOLAYA') {
             $kotas = '40';
+        }else{
+            $kotas = $kta->id;
         }
         $formattedNumber = str_pad($kotas, 3, '0', STR_PAD_LEFT);
-
         $profiles = User::with('profiles')->where('id', auth()->user()->id)->first();
         $profiles->update([
             'name' => $request->username,
@@ -176,7 +155,7 @@ class ProfileController extends Controller
 
         $nokota = User::leftJoin('profiles', 'profiles.user_id', '=', 'users.id')
                 ->where('city_id', $kota)->count() + 1;
-        $no_urut_kota = sprintf("%01d", $nokota + 1);
+        $no_urut_kota = sprintf("%02d", $nokota + 1);
         $max = User::max('id');
         $no_urut = sprintf("%04d", $max + 1);
 
@@ -189,41 +168,77 @@ class ProfileController extends Controller
             $nama_file = $profiles->profiles->photo;
         }
 
-        $data = Profile::create([
-            'user_id' => auth()->user()->id,
-            'degree' => $request->degree,
-            'place' => $request->place,
-            'date_of_birth' => $request->date_of_birth,
-            'gender' => $request->gender,
-            'religion' => $request->religion,
-            'address' => $request->address,
-            'phone_number' => $request->phone_number,
-            'province_id' => $request->province_id,
-            'city_id' => $request->city_id,
-            'district_id' => $request->district_id,
-            'village_id' => $request->village_id,
-            'tipe' => $request->tipe,
-            'tahun' => $request->tahun,
-            'rtrw' => $request->rtrw,
-            'status' => $request->status,
-            'wa' => $request->wa,
-            'fb' => $request->fb,
-            'ig' => $request->ig,
-            'tw' => $request->tw,
-            'linkedin' => $request->linkedin,
-            'gelar' => $request->gelar,
-            'tiktok' => $request->tiktok,
-            'telegram' => $request->telegram,
-            'NRA' => '1022' . $formattedNumber . $no_urut_kota . $no_urut,
-            'photo' => $nama_file,
-            'valid_thru' => $bulan . '/' .$tahun ,
-            'tempat_bertugas' => $request->tempat_bertugas
-        ]);
+        if ($request->nra == '') {
+            $nra = '1022' . $formattedNumber . $no_urut_kota . $no_urut ;
+            $data = Profile::create([
+                'user_id' => auth()->user()->id,
+                'degree' => $request->degree,
+                'place' => $request->place,
+                'date_of_birth' => $request->date_of_birth,
+                'gender' => $request->gender,
+                'religion' => $request->religion,
+                'address' => $request->address,
+                'phone_number' => $request->phone_number,
+                'province_id' => $request->province_id,
+                'city_id' => $request->city_id,
+                'district_id' => $request->district_id,
+                'village_id' => $request->village_id,
+                'tipe' => $request->tipe,
+                'tahun' => $request->tahun,
+                'rtrw' => $request->rtrw,
+                'status' => $request->status,
+                'wa' => $request->wa,
+                'fb' => $request->fb,
+                'ig' => $request->ig,
+                'tw' => $request->tw,
+                'linkedin' => $request->linkedin,
+                'gelar' => $request->gelar,
+                'tiktok' => $request->tiktok,
+                'telegram' => $request->telegram,
+                'NRA' => $nra,
+                'photo' => $nama_file,
+                'valid_thru' => $bulan . '/' . $tahun,
+                'tempat_bertugas' => $request->tempat_bertugas
+            ]);
+        } else {
+            $nra = $request->nra;
+            Profile::where('NRA',$request->nra)->update([
+                'user_id' => auth()->user()->id,
+                'degree' => $request->degree,
+                'place' => $request->place,
+                'date_of_birth' => $request->date_of_birth,
+                'gender' => $request->gender,
+                'religion' => $request->religion,
+                'address' => $request->address,
+                'phone_number' => $request->phone_number,
+                'province_id' => $request->province_id,
+                'city_id' => $request->city_id,
+                'district_id' => $request->district_id,
+                'village_id' => $request->village_id,
+                'tipe' => $request->tipe,
+                'tahun' => $request->tahun,
+                'rtrw' => $request->rtrw,
+                'status' => $request->status,
+                'wa' => $request->wa,
+                'fb' => $request->fb,
+                'ig' => $request->ig,
+                'tw' => $request->tw,
+                'linkedin' => $request->linkedin,
+                'gelar' => $request->gelar,
+                'tiktok' => $request->tiktok,
+                'telegram' => $request->telegram,
+                'photo' => $nama_file,
+                'valid_thru' => $bulan . '/' . $tahun,
+                'tempat_bertugas' => $request->tempat_bertugas
+            ]);
+        }
+
+
         $datas = [
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
             'sender' => '6285880255326',
             'number' => $request->wa,
-            'message' => 'Terima kasih telah mendaftar menjadi anggota FPPPK Kabupaten Bogor. Harap tunggu 1 x 24 jam data Anda sedang diverifikasi . Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini. Terima kasih',
+            'message' => 'Terima kasih telah mendaftar menjadi anggota FPPPK Kabupaten Bogor. Harap tunggu 1 x 24 jam data Anda sedang diverifikasi. Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini, Terima kasih, Salam Sejahtera.',
             // 'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
             // 'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
             // 'type' => 'image',
@@ -264,7 +279,7 @@ class ProfileController extends Controller
         $profile = User::with('profiles')->where('id', auth()->user()->id)->first();
         $kecamatan = District::where('id', $profile->profiles->district_id)->first();
         $pdf = PDF::loadView('profile_backend.cetak', compact('profile', 'kecamatan'));
-        return $pdf->download('KTA-FPPPK-'.$profile->profiles->NRA.'.pdf');
+        return $pdf->download('KTA-FPPPK-' . $profile->profiles->NRA . '.pdf');
     }
 
     public function show1(Profile $profile)

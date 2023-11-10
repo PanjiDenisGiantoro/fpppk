@@ -84,7 +84,7 @@ filter: blur(8px);
             position: absolute;
             top: 25px;
             left: 490px;
-            width: 200px;
+            width: 220px;
             height: 200px;
 
              border-radius: 60%;
@@ -115,10 +115,10 @@ filter: blur(8px);
                 font-size: 7px;
             }
             .avatar {
-                top: 7%;
+                top: 5%;
                 left: 65%;
-                width: 25%;
-                height: 40%;
+                width: 29%;
+                height: 49%;
                 border: 1px solid #febc58;
             }
         }

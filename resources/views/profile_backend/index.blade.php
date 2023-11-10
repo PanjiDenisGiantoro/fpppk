@@ -21,6 +21,24 @@
 
                             </div>
                             <div class="line"></div>
+
+                            <div class="box-body">
+                                <div class="mb-3">
+                                    <label class="form-label mb-14">Apakah ada memiliki Nomor Registrasi Anggota ?</label>
+                                    <select name="nra" id="adas" class="form-control select2">
+                                        <option value="">Pilih</option>
+                                        <option value="1">Ada</option>
+                                        <option value="2">Tidak Ada</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 mt-3 nranumber">
+                                    <label class="form-label mb-14">Masukkan NRA Anda <span></span></label>
+                                    <input type="text" class="form-control" id="nra" name="nra"
+                                           placeholder="Masukkan NRA Anda">
+                                </div>
+                            </div>
+
+                            <div class="ada">
                             <div class="box-body">
                                 <div class="auth-content my-auto">
                                     <form class="mt-6 pt-2" id="myForm"
@@ -539,6 +557,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -551,7 +570,16 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
+        $('.nranumber').hide();
 
+        $('#adas').on('change',function (){
+            if($(this).val() == '1'){
+                $('.nranumber').show();
+            }else{
+                $('.nranumber').hide();
+            }
+        })
+        $('.ada').hide();
         function compressImage(inputFile, maxWidth, maxHeight, outputFormat, quality, callback) {
             const reader = new FileReader();
             reader.onload = function (event) {
@@ -671,11 +699,3 @@
             })
             $('#kecamatan').on('change', function () {
                 onChangeSelect('{{ route("villages") }}', $(this).val(), 'desa');
-            })
-        });
-
-
-    </script>
-
-@endpush
-

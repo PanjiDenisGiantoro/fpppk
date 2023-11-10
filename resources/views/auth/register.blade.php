@@ -291,7 +291,7 @@
                         <form id="stripe-login" method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="field padding-bottom--24">
-                                <label for="name">Nama</label>
+                                <label for="name">Nama Lengkap</label>
                                 <input id="name" class="block mt-1 w-full" type="text" name="name"  required autofocus autocomplete="name" />
                             </div>
                             <div class="field padding-bottom--24">

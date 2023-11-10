@@ -574,7 +574,7 @@
                                                                         </div>
 
                                                                         <div class="flex justify-content-center items-center text-center mt-4 mb-4">
-                                                                            <a href="{{ url('foto/'.$list->photo) }}">
+                                                                            <a href="{{ url('foto/'.$list->photo) }}" target="_blank">
                                                                                 <img
                                                                                     src="{{ url('foto/'.$list->photo) }}"
                                                                                     width="100" height="100"/>
@@ -614,6 +614,10 @@
 @endsection
 @push('scripts')
     <script>
-        $('#task-profile').DataTable();
+        $('#task-profile').DataTable({
+            "pageLength": 100, // Set the default number of entries per page to 100
+            "lengthMenu": [100, 200, 400, 500], // Customize the dropdown options
+
+        });
     </script>
 @endpush
