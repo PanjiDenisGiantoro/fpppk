@@ -1191,7 +1191,7 @@
                                                                 <select name="status" id="status" class="form-control">
                                                                     <option value="">Pilih</option>
                                                                     <option value="PNS">PNS</option>
-                                                                    <option value="PPPK">PPPK</option>
+                                                                    <option value="PPPK">ASN PPPK</option>
                                                                     <option value="Honorer">Honorer</option>
                                                                 </select>
                                                             @else
