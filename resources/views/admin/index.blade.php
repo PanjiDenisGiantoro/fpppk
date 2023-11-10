@@ -153,15 +153,6 @@
                                                                                    autofocus>
                                                                         </div>
                                                                         <div class="mb-3 mt-24">
-                                                                            <label
-                                                                                class="form-label mb-14">Gelar</label>
-                                                                            <input type="text" class="form-control"
-                                                                                   id="gelar" name="gelar"disabled
-                                                                                   placeholder="S.Pd"
-                                                                                   value="{{ $list->gelar ?? '' }}"
-                                                                                   autofocus>
-                                                                        </div>
-                                                                        <div class="mb-3 mt-24">
                                                                             <label for="useremail"
                                                                                    class="form-label mb-14">E-Mail</label>
                                                                             <input type="email" class="form-control"
