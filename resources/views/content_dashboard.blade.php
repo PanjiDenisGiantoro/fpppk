@@ -13,8 +13,8 @@
                                     <i class="bx bxs-bell bx-tada bx-tada"></i>
                                 </div>
                                 <div class="content">
-                                    <h5 class="title-box">Notification</h5>
-                                    <p class="color-1 mb-0 pt-4">5 Unread notification</p>
+                                    <h5 class="title-box">Notifikasi</h5>
+                                    <p class="color-1 mb-0 pt-4">5 Total notifikasi</p>
                                 </div>
                             </div>
                             <div class="icon-box bg-color-2">
@@ -22,8 +22,8 @@
                                     <i class='bx bxs-message-rounded'></i>
                                 </div>
                                 <div class="content click-c">
-                                    <h5 class="title-box">Message</h5>
-                                    <p class="color-2 mb-0 pt-4">5 Unread notification</p>
+                                    <h5 class="title-box">Pesan</h5>
+                                    <p class="color-2 mb-0 pt-4">5 Total pesan</p>
                                 </div>
                                 <div class="notification-list card">
                                     <div class="top box-header">
@@ -66,12 +66,23 @@
                                         <i class="bx bx-calendar"></i>
                                     </div>
                                     <div class="content">
-                                        <h5 class="title-box">Calendar</h5>
-                                        <p class="color-3 mb-0 pt-4">5 Unread notification</p>
+                                        <h5 class="title-box">Kalender</h5>
+                                        <p class="color-3 mb-0 pt-4">5 Total kalender</p>
                                     </div>
                                 </a>
                             </div>
-                            <div class="icon-box bg-color-4">
+                            <div class="icon-box bg-color-1">
+                                <a class="create d-flex" href="calendar.html">
+                                    <div class="icon bg-icon-1">
+                                        <i class="bx bx-calendar"></i>
+                                    </div>
+                                    <div class="content">
+                                        <h5 class="title-box">Pengguna</h5>
+                                        <p class="color-1 mb-0 pt-4">5 Total pengguna</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- <div class="icon-box bg-color-4">
                                 <a class="create d-flex" href="#" data-toggle="modal" data-target="#add_project">
                                     <div class="icon bg-white">
                                         <i class="bx bx-plus"></i>
@@ -80,7 +91,7 @@
                                         <h5 class="color-white">Create New Project</h5>
                                     </div>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -89,22 +100,20 @@
                     <div class="col-6 col-md-6 col-sm-12 mb-0">
                         <div class="row">
                             <div class="col-12">
-                                <!-- CUSTOMERS CHART -->
                                 <div class="box f-height">
                                     <div class="box-header d-flex justify-content-between mb-wrap">
-                                        <h3 class="mt-9 ml-5">Project Statistics</h3>
+                                        <h3 class="mt-9 ml-5">Statistik</h3>
                                         <ul class="card-list mb-0">
-                                            <li class="custom-label"><span></span>Complete</li>
-                                            <li class="custom-label"><span></span>Doing</li>
+                                            <li class="custom-label"><span></span>Terverifikasi</li>
+                                            <li class="custom-label"><span></span>Belum Terverifikasi</li>
                                         </ul>
                                     </div>
                                     <div class="box-body pt-20">
                                         <div id="customer-chart"></div>
                                     </div>
                                 </div>
-                                <!-- END CUSTOMERS CHART -->
                             </div>
-                            <div class="col-6 col-xl-12 col-sm-12">
+                            <!-- <div class="col-6 col-xl-12 col-sm-12">
                                 <div class="box">
                                     <div class="box-body d-flex pb-0">
                                         <div class="me-auto">
@@ -174,26 +183,42 @@
                                         <div id="chartBar3" class="bar-chart"></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-6 col-md-6 col-sm-12 mb-0">
                         <div class="row">
-                            <div class="col-12">
+                            <!-- <div class="col-12">
                                 <div class="box box-manage">
                                     <div class="box-body d-flex pd-7 pb-0">
                                         <div class="me-auto w-55">
-                                            <h5 class="card-title text-white fs-30 font-w500 mt-4">Manage your project in one touch</h5>
-                                            <p class="mb-0 text-o7 fs-18 font-w500 pb-11">Etiam facilisis ligula nec velit posuere egestas. Nunc dictum</p>
+                                            <h5 class="card-title text-white fs-30 font-w500 mt-4">FORUM PPPK Kabupaten Bogor</h5>
+                                            <p class="mb-0 text-o7 fs-18 font-w500 pb-11">-</p>
                                         </div>
                                         <div class="btn-now">
                                             <a class="h6 font-w500" href="#"><span>Try For Free Now</span></a>
                                         </div>
                                     </div>
-
+                                </div>
+                            </div> -->
+                            <div class="col-6 col-xl-12 col-md-12 col-sm-12">
+                                <div class="box">
+                                    <div class="box-header">
+                                        <div class="me-auto">
+                                            <h6 class="card-title font-w400 mb-20">Current Balance</h6>
+                                            <div class="count-number d-flex">
+                                                <span class="h4 font-w900">$</span>
+                                                <h4 class="count font-w900 pl-5">25,456.44</h4>
+                                            </div>
+                                            <p class="fs-18 mb-0 mt-6"><span class="text-primary pr-7">+3.2</span>than last week</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div id="chartBar2" class="bar-chart "></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-xl-12 col-md-12 col-sm-12">
+                            <!-- <div class="col-6 col-xl-12 col-md-12 col-sm-12">
                                 <div class="box">
                                     <div class="box-header">
                                         <div class="me-auto">
@@ -266,10 +291,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <div class="box">
                             <div class="box-header">
                                 <div class="me-auto">
@@ -617,13 +642,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- /.owl-carousel -->
                                 </div>
-                                <!-- /.themesflat-carousel -->
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-sm-12">
+                    </div> -->
+                    <!-- <div class="col-6 col-sm-12">
                         <div class="box">
                             <div class="box-header">
                                 <div class="me-auto">
@@ -644,7 +667,6 @@
                                         </ul>
                                     </div>
                                     <div class="col-6 col-xl-12 w-sm-100 mb-0">
-                                        <!-- <canvas id="doughnut-chart" width="240" height="240"></canvas> -->
                                         <div class="canvas-container">
                                             <canvas id="chartjs-4" class="chartjs" width="100" height="100"></canvas>
                                             <div class="chart-data">
@@ -661,8 +683,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-sm-12">
+                    </div> -->
+                    <!-- <div class="col-6 col-sm-12">
                         <div class="box">
                             <div class="box-header pt-0">
                                 <div class="me-auto">
@@ -718,11 +740,11 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
 
-                <div id="add_project" class="modal custom-modal fade" role="dialog">
+                <!-- <div id="add_project" class="modal custom-modal fade" role="dialog">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -810,9 +832,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="modal custom-modal fade" id="delete_project" role="dialog">
+                <!-- <div class="modal custom-modal fade" id="delete_project" role="dialog">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body">
@@ -833,9 +855,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="modal custom-modal fade" id="edit_project" role="dialog">
+                <!-- <div class="modal custom-modal fade" id="edit_project" role="dialog">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body">
@@ -869,7 +891,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             @else
                             <section class="login singup">

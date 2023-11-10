@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.proschool.smkkesehatanlogosmobile",
+      "sha256_cert_fingerprints": [
+        "69:8F:35:B7:C2:9F:88:D3:2C:6F:65:28:FD:44:3C:A0:14:03:02:29:CB:87:AC:81:78:D5:3F:72:F8:63:46:D8",
+        "44:91:77:5F:C6:DC:C9:99:9A:32:F3:59:60:33:E1:09:D0:D3:7C:E9:E3:E7:74:80:89:E7:73:3A:73:56:3F:4B"
+      ]
+    }
+  }
+]
