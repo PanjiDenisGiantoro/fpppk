@@ -13,13 +13,15 @@
                             <div class="avatar ">
                                 <img src="foto/{{$profile->profiles->photo ?? ''}}" alt="" style="width: 150px;height:150px">
                             </div>
-                            <div class="pro-user mt-3">
-                                <h5 class="pro-user-username text-dark mb-2 fs-15 mt-42 color-span">{{ $profile->name }} {{ $profile->profiles->gelar ?? '' }}</h5>
-                                <h6 class="pro-user-desc text-muted fs-14">{{ $profile->email }}</h6>
+                            <div class="text-center ">
+                                <h5 class="pro-user-username text-dark  fs-15 mt-42 color-span" style="margin-left: 36px">{{ $profile->name }} {{ $profile->profiles->gelar ?? '' }}</h5>
+                            </div>
+                            <div class="pro-user mt-1">
+
+                                <h6 class="pro-user-desc text-muted fs-14" style="margin-left: 36px">{{ $profile->email }}</h6>
                             </div>
                         </div>
                     </div>
-
                     <div class="box-footer pt-41">
                         <div class="btn-list text-center">
                             <a href="{{ $profile->profiles->telegram ?? '#' }}" class="btn btn-light">
@@ -103,7 +105,7 @@
                                     <td>:</td>
                                     <td class="py-2 px-0"> <span class="">
                                             @if ($profile->profiles->status == 'PNS')
-                                                PNS
+                                                ASN
                                             @elseif($profile->profiles->status == 'PPPK')
                                                 ASN PPPK ({{ $profile->profiles->tahun }})
                                             @elseif($profile->profiles->status == 'Honorer')

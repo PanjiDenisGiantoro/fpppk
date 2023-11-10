@@ -488,9 +488,8 @@
                                             </label>
                                             <input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="250000000"/>
                                             <input type="file" class="form-control" name="foto" id="inputImageFile"
-                                                   accept="image/*" onchange="loadFile(event)">
+                                                   accept="image/*" >
                                         </div>
-                                        <img id="output" width="100" height="100"/>
                                         <div class="mb-3 mt-29">
 
                                             <button
