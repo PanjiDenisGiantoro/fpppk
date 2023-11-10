@@ -1269,7 +1269,7 @@
                                                                     >2023
                                                                     </option>
                                                                 @else
-                                                                    <option value="">Pilih</option>
+                                                                    <option value="">Pilih Tahun Pengangkatan</option>
                                                                     <option value="2021">2021</option>
                                                                     <option value="2022">2022</option>
                                                                     <option value="2023">2023</option>

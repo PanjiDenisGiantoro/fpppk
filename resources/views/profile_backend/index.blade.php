@@ -323,7 +323,7 @@
                                                 <select name="status" id="status" class="form-control">
                                                     <option value="">Pilih</option>
                                                     <option value="PNS">PNS</option>
-                                                    <option value="PPPK">PPPK</option>
+                                                    <option value="PPPK">ASN PPPK</option>
                                                     <option value="Honorer">Honorer</option>
                                                 </select>
                                             @else
@@ -404,7 +404,7 @@
                                                     >2023
                                                     </option>
                                                 @else
-                                                    <option value="">Pilih</option>
+                                                    <option value="">Pilih Tahun Pengangkatan</option>
                                                     <option value="2021">2021</option>
                                                     <option value="2022">2022</option>
                                                     <option value="2023">2023</option>
