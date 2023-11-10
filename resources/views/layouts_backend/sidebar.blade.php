@@ -4,7 +4,7 @@
 <!-- SIDEBAR -->
 <div class="sidebar">
     <div class="sidebar-logo">
-        <a href="index.html">
+        <a href="{{ URL::to('dashboard') }}">
                         <img src="assets_backend/images/logo.png" alt="Protend logo">
         </a>
         <div class="sidebar-close" id="sidebar-close">
@@ -97,14 +97,13 @@
                 @endif
 
             <li>
-                <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
+                <!-- <a class="darkmode-toggle" id="darkmode-toggle" onclick="switchTheme()">
                     <div>
                         <i class='bx bx-cog mr-10'></i>
                         <span>Mode Gelap</span>
                     </div>
-
                     <span class="darkmode-switch"></span>
-                </a>
+                </a> -->
             </li>
         </ul>
     </div>

@@ -15,7 +15,7 @@
                                     </a>
                                 </div>
                                 <div class="action-reg">
-                                    <h4 class="fs-30">Register</h4>
+                                    <h4 class="fs-30">Pendaftaran</h4>
 
                                 </div>
 

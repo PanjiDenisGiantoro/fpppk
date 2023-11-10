@@ -4,7 +4,7 @@
             <i class='bx bx-menu'></i>
         </div>
         <div class="main-title">
-            Dashboard
+            Beranda
         </div>
     </div>
 
@@ -13,7 +13,7 @@
         <!-- App Search-->
         <form class="app-search d-none d-lg-block">
             <div class="position-relative">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Cari">
                 <span class="bx bx-search-alt"></span>
             </div>
         </form>
@@ -60,10 +60,10 @@
             </button>
             <div class="dropdown-menu dropdown-menu-end">
                 <!-- item-->
-                <div class="dropdown-divider"></div>
+                <!-- <div class="dropdown-divider"></div> -->
                 <form action="/logout" method="POST">
                     @csrf
-                    <button class=" dropdown-item text-danger">Logout</button>
+                    <button class=" dropdown-item text-danger">Keluar</button>
                 </form>
                 {{--                <a class="dropdown-item text-danger" href="{{ route('logout') }}"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span>Logout</span></a>--}}
             </div>

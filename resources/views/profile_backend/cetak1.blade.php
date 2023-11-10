@@ -1,5 +1,6 @@
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -27,7 +28,7 @@
             left: 40px;
             color: black;
             padding: 10px;
-             font-size: 30px;
+             font-size: 20px;
             font-weight: bold;
             font-family: 'Poppins', 'Roboto', sans-serif;
             text-align: left; /* Teks rata kiri */
@@ -42,9 +43,10 @@ filter: blur(8px);
             top: 310px;
             left: 40px;
             padding: 10px;
-            font-size: 20px;
+            font-size: 24px;
             color: orange;
-            font-family: "Roboto, sans-serif";
+            /* font-family: "Roboto, sans-serif"; */
+            font-family: "Share Tech";
             text-align: left; /* Teks rata kiri */
         }
 
@@ -59,7 +61,7 @@ filter: blur(8px);
             padding: 10px;
             color: orange;
             font-size: 20px;
-            font-family: "Arial, sans-serif";
+            font-family: 'Poppins', 'Roboto', sans-serif;
             text-align: left; /* Teks rata kiri */
         }
 
@@ -74,7 +76,7 @@ filter: blur(8px);
             padding: 10px;
             color: orange;
             font-size: 20px;
-            font-family: "Roboto, sans-serif";
+            font-family: 'Poppins', 'Roboto', sans-serif;
             text-align: left;
         }
 

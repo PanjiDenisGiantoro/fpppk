@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets_frontend/assets/img/logo/favicon.png">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="assets_frontend/assets/img/logo/favicon.png"> -->
+    <link rel="icon" href="assets_backend/fpppk.png" type="image/png">
     <!-- ========== Start Stylesheet ========== -->
     <link href="assets_frontend/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets_frontend/assets/css/all.min.css" rel="stylesheet" />

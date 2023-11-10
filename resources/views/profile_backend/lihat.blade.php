@@ -48,7 +48,7 @@
 
                 <div class="box left-dot">
                     <div class="box-header  border-0 pd-0">
-                        <div class="box-title fs-20 font-w600">User Details</div>
+                        <div class="box-title fs-20 font-w600">Detail Pengguna</div>
                     </div>
                     <div class="box-body pt-20 user-profile">
                         <div class="table-responsive">
