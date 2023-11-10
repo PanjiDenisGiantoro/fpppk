@@ -30,12 +30,12 @@
                                 <i class="fab fa-facebook"></i>
 
                             </a>
-                            <a href="#{{ $profile->profiles->ig ?? '#' }}" class="btn btn-light">
+                            <a href="{{ $profile->profiles->ig ?? '#' }}" class="btn btn-light">
                                 <i class="fab fa-instagram"></i>
 
                             </a>
-                            <a href="{{ $profile->profiles->tw ?? '#' }}" class="btn btn-light">
-                                <i class="fab fa-twitter"></i>
+                            <a href="{{ $profile->profiles->tiktok ?? '#' }}" class="btn btn-light">
+                                <i class="fab fa-tiktok"></i>
                             </a>
                             <a href="{{ $profile->profiles->linkedin ?? '#' }}" class="btn btn-light">
                                 <i class="fab fa-linkedin"></i>
