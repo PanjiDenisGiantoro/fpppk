@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Laravolt\Indonesia\Models\City;
 use Laravolt\Indonesia\Models\District;
 use Laravolt\Indonesia\Models\Province;
@@ -38,6 +39,133 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
+        $tahun = date('y') + 5;
+        $kota = $request->district_id;
+        $kta = DB::table('indonesia_districts')->where('id', $kota)->first();
+
+//        01 Cibinong
+//02 Gunung Putri
+//03 Citeureup
+//04 Sukaraja
+//05 Babakan Madang
+//06 Jonggol
+//07. Cileungsi
+//08 Cariu
+//09 Sukamakmur
+//10 Parung
+//11. Gunung Sindur
+//12. kemang
+//13. Bojong Gede
+//14. Leuwi liang
+//15. Ciampea
+//16. Cibungbulang
+//17  Pamijahan
+//18. Rumpin
+//19 Jasinga
+//20 Parung panjang
+//21 Cigudeg
+//22. Nanggung
+//23 Tenjo
+//24 Ciawi
+//25 Cisarua
+//26. Megamendung
+//27 Caringin
+//28 Cijeruk
+//29 Ciomas
+//30 Dramaga
+//31 Tamansari
+//32 Klapanunggal
+//33 Ciseeng
+//34 Rancabungur
+//35 Sukajaya
+//36. Tanjung sari
+//37  Tajur halang
+//38. Cigombong
+//39. Leuwisadeng
+//40 Tenjolaya
+        if (ucfirst($kta) == 'Jonggol'){
+            $kotas = '06';
+        }elseif (ucfirst($kta) == 'Cibinong'){
+            $kotas = '01';
+        }elseif (ucfirst($kta) == 'Gunung Putri'){
+            $kotas = '02';
+        }elseif (ucfirst($kta) == 'Citeureup'){
+            $kotas = '03';
+        }elseif (ucfirst($kta) == 'Sukaraja'){
+            $kotas = '04';
+        }elseif (ucfirst($kta) == 'Babakan Madang'){
+            $kotas = '05';
+        }elseif (ucfirst($kta) == 'Cileungsi'){
+            $kotas = '07';
+        }elseif (ucfirst($kta) == 'Cariu'){
+            $kotas = '08';
+        }elseif (ucfirst($kta) == 'Sukamakmur'){
+            $kotas = '09';
+        }elseif (ucfirst($kta) == 'Parung'){
+            $kotas = '10';
+        }elseif (ucfirst($kta) == 'Gunung Sindur'){
+            $kotas = '11';
+        }elseif (ucfirst($kta) == 'Kemang'){
+            $kotas = '12';
+        }elseif (ucfirst($kta) == 'Bojong Gede'){
+            $kotas = '13';
+        }elseif (ucfirst($kta) == 'Leuwi Liang'){
+            $kotas = '14';
+        }elseif (ucfirst($kta) == 'Ciampea'){
+            $kotas = '15';
+        }elseif (ucfirst($kta) == 'Cibungbulang'){
+            $kotas = '16';
+        }elseif (ucfirst($kta) == 'Pamijahan'){
+            $kotas = '17';
+        }elseif (ucfirst($kta) == 'Rumpin'){
+            $kotas = '18';
+        }elseif (ucfirst($kta) == 'Jasinga'){
+            $kotas = '19';
+        }elseif (ucfirst($kta) == 'Parung Panjang'){
+            $kotas = '20';
+        }elseif (ucfirst($kta) == 'Cigudeg'){
+            $kotas = '21';
+        }elseif (ucfirst($kta) == 'Nanggung'){
+            $kotas = '22';
+        }elseif (ucfirst($kta) == 'Tenjo'){
+            $kotas = '23';
+        }elseif (ucfirst($kta) == 'Ciawi'){
+            $kotas = '24';
+        }elseif (ucfirst($kta) == 'Cisarua'){
+            $kotas = '25';
+        }elseif (ucfirst($kta) == 'Megamendung'){
+            $kotas = '26';
+        }elseif (ucfirst($kta) == 'Caringin'){
+            $kotas = '27';
+        }elseif (ucfirst($kta) == 'Cijeruk'){
+            $kotas = '28';
+        }elseif (ucfirst($kta) == 'Ciomas'){
+            $kotas = '29';
+        }elseif (ucfirst($kta) == 'Dramaga'){
+            $kotas = '30';
+        }elseif (ucfirst($kta) == 'Tamansari'){
+            $kotas = '31';
+        }elseif (ucfirst($kta) == 'Klapanunggal'){
+            $kotas = '32';
+        }elseif (ucfirst($kta) == 'Ciseeng'){
+            $kotas = '33';
+        }elseif (ucfirst($kta) == 'Rancabungur'){
+            $kotas = '34';
+        }elseif (ucfirst($kta) == 'Sukajaya'){
+            $kotas = '35';
+        }elseif (ucfirst($kta) == 'Tanjung Sari'){
+            $kotas = '36';
+        }elseif (ucfirst($kta) == 'Tajur Halang'){
+            $kotas = '37';
+        }elseif (ucfirst($kta) == 'Cigombong'){
+            $kotas = '38';
+        }elseif (ucfirst($kta) == 'Leuwisadeng'){
+            $kotas = '39';
+        }elseif (ucfirst($kta) == 'Tenjolaya') {
+            $kotas = '40';
+        }
+        $formattedNumber = str_pad($kotas, 3, '0', STR_PAD_LEFT);
+
         $profiles = User::with('profiles')->where('id', auth()->user()->id)->first();
         $profiles->update([
             'name' => $request->username,
@@ -45,11 +173,10 @@ class ProfileController extends Controller
         ]);
         $bulan = date('m');
 //        tahunnya ambil 2 di belakang tahun sekarang + 5 tahun
-        $tahun = date('y') + 5;
-        $kota = $request->city_id;
+
         $nokota = User::leftJoin('profiles', 'profiles.user_id', '=', 'users.id')
                 ->where('city_id', $kota)->count() + 1;
-        $no_urut_kota = sprintf("%02d", $nokota + 1);
+        $no_urut_kota = sprintf("%01d", $nokota + 1);
         $max = User::max('id');
         $no_urut = sprintf("%04d", $max + 1);
 
@@ -87,7 +214,7 @@ class ProfileController extends Controller
             'gelar' => $request->gelar,
             'tiktok' => $request->tiktok,
             'telegram' => $request->telegram,
-            'NRA' => '1022' . $kota . $no_urut_kota . $no_urut,
+            'NRA' => '1022' . $formattedNumber . $no_urut_kota . $no_urut,
             'photo' => $nama_file,
             'valid_thru' => $bulan . '/' .$tahun ,
             'tempat_bertugas' => $request->tempat_bertugas
