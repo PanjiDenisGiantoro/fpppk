@@ -1403,7 +1403,6 @@
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">No Whatsapp </label>
-                                                    <p id="notifwa"></p>
                                                     <input type="text" class="form-control" name="wa" id="wa" required
                                                            value="{{ $user->profiles->wa ?? '' }}">
                                                 </div>
@@ -1526,27 +1525,6 @@
         $('.emptydata').hide();
 
 
-        $('#wa').on('keyup', function () {
-                var wa = $(this).val();
-                var wa = wa.replace(/[^0-9]/g, '');
-                $(this).val(wa);
-                $.ajax({
-                    type: "get",
-                    url: "{{ route('profile.wa') }}",
-                    data: {
-                        wa: $(this).val()
-                    },
-                    success: function (response) {
-                        if (response.status == 'tidakada') {
-                            $('#notifwa').html('Nomor Whatsapp Tersedia');
-                            $('#wa').val('');
-                        }
-                    },
-                    error: function (response) {
-
-                    }
-                })
-            })
 
 
 
