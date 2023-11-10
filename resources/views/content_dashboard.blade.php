@@ -894,7 +894,7 @@
                                                     <form class="mt-6 pt-2" id="myForm"
                                                           @if(empty($user->profiles))
                                                               method="post"
-                                                          action="{{ route('profile.store') }}">
+                                                          action="{{ route('profile.store') }}"  enctype="multipart/form-data">
                                                         @else
                                                             method="post"
                                                             action="{{ route('profile.update', $user->profiles->id) }}"
@@ -1353,7 +1353,7 @@
                                                             </label>
                                                             <input id="max_id" type="hidden" name="MAX_FILE_SIZE" value="250000000"/>
                                                             <input type="file" class="form-control" name="foto" id="inputImageFile"
-                                                                   accept="image/*" onchange="loadFile(event)">
+                                                                   accept="image/*">
                                                         </div>
                                                         <img id="output" width="100" height="100"/>
                                                         <div class="mb-3 mt-29">
@@ -1412,6 +1412,7 @@
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+
 
         function myFunction() {
             var x = document.getElementById("username");
