@@ -37,7 +37,7 @@ filter: blur(8px);
             -webkit-filter: blur(8px);
             @endif
             position: absolute;
-            top: 300px;
+            top: 310px;
             left: 40px;
             padding: 10px;
             font-size: 20px;
