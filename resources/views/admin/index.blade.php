@@ -85,9 +85,9 @@
                                                             <a href="#" class="d-flex ">
                                                                 <span>{{ $list->NRA ?? ''}}</span> </a>
                                                         </td>
-                                                        <td>{{ $list->user->name }}</td>
+                                                        <td>{{ $list->user->name ?? ''}}</td>
                                                         <td>{{ $list->user->email }}</td>
-                                                        <td>{{ $list->wa }}</td>
+                                                        <td>{{ $list->wa ?? ''}}</td>
                                                         <td>
                                                             <div>
                                                                 {{ $list->kecamatan->name ?? '' }}
