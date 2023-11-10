@@ -1568,7 +1568,7 @@
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'NRA Tidak Ada!',
+                            text: 'NRA Tidak Boleh Kosong!',
                         })
                         $('.emptydata').hide();
 
@@ -1576,7 +1576,7 @@
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'NRA Tidak Boleh Kosong!',
+                            text: 'NRA Tidak Ditemukan!',
                         })
                         $('.emptydata').hide();
                     }else {
