@@ -19,7 +19,7 @@ class UserController extends Controller
         $novalid = Profile::where('is_valid', 0)->count();
 
         $user = Profile::with('user','kecamatan','kotas','desas','provinces')->where('NRA','!=',null)
-            ->latest()->get();
+            ->latest()->limit(10)->get();
         return view('admin.index', compact('user','valid','novalid'));
     }
     public function show($id)
