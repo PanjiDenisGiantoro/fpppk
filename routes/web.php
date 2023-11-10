@@ -38,6 +38,7 @@ Route::get('/lihat',[\App\Http\Controllers\ProfileController::class,'view'])->na
 Route::get('/cetak1',[\App\Http\Controllers\ProfileController::class,'show'])->name('profile.show1');
 Route::get('/cetak2',[\App\Http\Controllers\ProfileController::class,'show1'])->name('profile.show2');
 Route::get('/check',[\App\Http\Controllers\ProfileController::class,'check'])->name('profile.check');
+Route::get('/wa',[\App\Http\Controllers\ProfileController::class,'check_wa'])->name('profile.wa');
 //area
 Route::get('provinces', [\App\Http\Controllers\AreaController::class,'provinces'])->name('provinces');
 Route::get('cities', [\App\Http\Controllers\AreaController::class,'cities'])->name('cities');

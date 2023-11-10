@@ -49,6 +49,23 @@ class ProfileController extends Controller
         }
 
     }
+    public function check_wa(Request $request)
+    {
+        $wa = $request->wa;
+        $profile = Profile::where('wa', $wa)->count();
+        if($wa > 1){
+            return response()->json([
+                'status' => 'tidakada',
+                'data' => 'No Whatsapp Sudah Terdaftar'
+            ]);
+        }elseif($profile == 0) {
+            return response()->json([
+                'status' => 'success',
+                'data' => $profile
+            ]);
+        }
+
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -244,7 +261,7 @@ class ProfileController extends Controller
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
             'sender' => '6285880255326',
             'number' => $request->wa,
-            'message' => 'Terima kasih telah mendaftar menjadi anggota FPPPK Kabupaten Bogor. Harap tunggu 1 x 24 jam data Anda sedang diverifikasi. Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini, Terima kasih, Salam Sejahtera.',
+            'message' => 'Terima kasih telah mendaftar menjadi anggota FPPPK Kabupaten Bogor. Harap tunggu 1 x 24 jam data Anda sedang diverifikasi. Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini, Terima kasih, Salam Sejahtera. * FPPPK Kabupaten Bogor *',
             // 'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
             // 'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
             // 'type' => 'image',

@@ -1401,34 +1401,34 @@
                                                            id="phone_number">
                                                 </div>
                                                 <div class="mb-3  mt-24">
-                                                    <label class="form-label mb-14">No Whatsapp</label>
+                                                    <label class="form-label mb-14">No Whatsapp </label>
                                                     <input type="text" class="form-control" name="wa" id="wa" required
                                                            value="{{ $user->profiles->wa ?? '' }}">
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">Facebook</label>
-                                                    <input type="text" class="form-control" name="fb" id="fb"
+                                                    <input type="text" class="form-control" name="fb" id="fb"placeholder="https://facebook.com/username"
                                                            value="{{ $user->profiles->fb ?? '' }}">
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">Instagram</label>
-                                                    <input type="text" class="form-control" name="ig" id="ig"
+                                                    <input type="text" class="form-control" name="ig" id="ig"placeholder="https://instagram.com/username"
                                                            value="{{ $user->profiles->ig ?? '' }}">
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">Tiktok</label>
-                                                    <input type="text" class="form-control" name="tiktok" id="tiktok"
+                                                    <input type="text" class="form-control" name="tiktok" id="tiktok"placeholder="https://tiktok.com/username"
                                                            value="{{ $user->profiles->tiktok ?? '' }}">
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">LinkedIn</label>
-                                                    <input type="text" class="form-control" name="linkedin"
+                                                    <input type="text" class="form-control" name="linkedin" placeholder="https://linkedin.com/username"
                                                            id="linkedin"
                                                            value="{{ $user->profiles->linkedin ?? '' }}">
                                                 </div>
                                                 <div class="mb-3  mt-24">
                                                     <label class="form-label mb-14">Telegram</label>
-                                                    <input type="text" class="form-control" name="telegram"
+                                                    <input type="text" class="form-control" name="telegram" placeholder="https://telegram.com/username"
                                                            id="telegram"
                                                            value="{{ $user->profiles->telegram ?? '' }}">
                                                 </div>
@@ -1518,6 +1518,33 @@
         $('.nranumber').hide();
         $('.emptydata').hide();
 
+
+        $('#wa').on('keyup',(function(){
+            var wa = $(this).val();
+            var wa = wa.replace(/[^0-9]/g, '');
+            $(this).val(wa);
+            $.ajax({
+                type: "get",
+                url: "{{ route('profile.wa') }}",
+                data: {
+                    wa: $(this).val()
+                },
+                success: function (response) {
+                    if(response.status == 'tidakada'){
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Nomor WA sudah terdaftar!',
+                        })
+                        $('#wa').val('');
+                    }
+                },
+                error: function (response) {
+
+                }
+            })
+        }))
+        }
         $('#adas').on('change', function () {
             if ($(this).val() == '1') {
                 $('.nranumber').show();
