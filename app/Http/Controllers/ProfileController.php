@@ -259,11 +259,7 @@ class ProfileController extends Controller
             'api_key' => 'uuh33HHGq2yMxyxOFqfY3zgctLjNjp',
             'sender' => '6285880255326',
             'number' => $request->wa,
-            'message' => 'Terima kasih telah mendaftar menjadi anggota FPPPK Kabupaten Bogor. Harap tunggu 1 x 24 jam data Anda sedang diverifikasi. Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini, Terima kasih, Salam Sejahtera. * FPPPK Kabupaten Bogor *',
-            // 'url' => 'https://fpppk.gurupro.id/assets_backend/fpppk.png',
-            // 'fileName' => pathinfo('https://fpppk.gurupro.id/assets_backend/fpppk.png', PATHINFO_FILENAME),
-            // 'type' => 'image',
-
+            'message' => 'Terima kasih telah mendaftar menjadi anggota FPPPK Kabupaten Bogor. Harap tunggu 1 x 24 jam data Anda sedang diverifikasi. Jika disetujui Anda akan mendapatkan notifikasi selanjutnya melalui whatsapp ini, Terima kasih, Salam Sejahtera. *'.'FPPPK Kabupaten Bogor'.'*.'.','
         ];
         $curl = curl_init();
 
