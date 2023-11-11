@@ -116,7 +116,11 @@
                                                                     data-target="#exampleModalCenter{{$list->id}}">
                                                                 Detail
                                                             </button>
+                                                            <a href="{{ url('delete/'.$list->id) }}"
+                                                               class="btn btn-danger btn-sm"
+                                                                onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">Hapus</a>
                                                         </td>
+
                                                     </tr>
                                                     <!-- Modal -->
                                                     <div id="exampleModalCenter{{$list->id}}"

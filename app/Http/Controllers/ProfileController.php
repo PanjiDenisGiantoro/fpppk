@@ -47,8 +47,8 @@ class ProfileController extends Controller
                 'data' => 'Data tidak ditemukan'
             ]);
         }
-
     }
+
     public function check_wa(Request $request)
     {
         $wa = $request->wa;
@@ -64,7 +64,6 @@ class ProfileController extends Controller
                 'data' => $profile
             ]);
         }
-
     }
 
     /**
@@ -392,8 +391,11 @@ class ProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Profile $profile)
+    public function destroy($id)
     {
-        //
+        Profile::where('user_id', $id)->delete();
+        User::where('id', $id)->delete();
+        Alert::success('Berhasil', 'Data Berhasil Dihapus');
+        return redirect()->route('user.index');
     }
 }

@@ -67,4 +67,5 @@ class UserController extends Controller
         Alert::success('Berhasil', 'Data berhasil di verifikasi');
         return redirect()->route('user.index');
     }
+
 }
