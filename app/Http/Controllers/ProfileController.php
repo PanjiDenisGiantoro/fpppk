@@ -166,7 +166,7 @@ class ProfileController extends Controller
         }else{
             $kotas = $kta->id;
         }
-        $formattedNumber = str_pad($kotas, 3, '0', STR_PAD_LEFT);
+//        $formattedNumber = str_pad($kotas, 3, '0', STR_PAD_LEFT);
         $profiles = User::with('profiles')->where('id', auth()->user()->id)->first();
         $profiles->update([
             'name' => $request->username,
@@ -177,7 +177,7 @@ class ProfileController extends Controller
 
         $nokota = User::leftJoin('profiles', 'profiles.user_id', '=', 'users.id')
                 ->where('city_id', $kota)->count() + 1;
-        $no_urut_kota = sprintf("%02d", $nokota + 1);
+        $no_urut_kota = sprintf("%03d", $nokota + 1);
         $max = User::max('id');
         $no_urut = sprintf("%04d", $max + 1);
         if ($request->hasFile('foto') == 'false') {
@@ -190,7 +190,7 @@ class ProfileController extends Controller
         }
 
         if ($request->nraupdate == '') {
-            $nra = '1022' . $formattedNumber . $no_urut_kota . $no_urut ;
+            $nra = '1022' . $kotas . $no_urut_kota . $no_urut ;
             $data = Profile::create([
                 'user_id' => auth()->user()->id,
                 'degree' => $request->degree,
