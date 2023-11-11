@@ -965,7 +965,8 @@
                                                 @endif
                                                 @csrf
                                                 <div class="mb-3">
-                                                    <label class="form-label mb-14">Nama</label>
+                                                    <label class="form-label mb-14">Nama
+                                                        <input type="text" name="nraupdate" id="nraupdate" hidden>
                                                     <input type="text" class="form-control" id="username"
                                                            name="username"
                                                            onkeyup="myFunction()"
@@ -1572,6 +1573,7 @@
                             text: 'NRA Ditemukan',
                         })
                         $('#nra').attr('readonly', true);
+                        $('#nraupdate').val($('#nra').val());
                         $('.emptydata').show();
                         $('#btnCheckNra').hide();
                     } else if (response.status == 'tidakada') {

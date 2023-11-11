@@ -180,7 +180,6 @@ class ProfileController extends Controller
         $no_urut_kota = sprintf("%02d", $nokota + 1);
         $max = User::max('id');
         $no_urut = sprintf("%04d", $max + 1);
-
         if ($request->hasFile('foto') == 'false') {
             $file = $request->file('foto');
             $nama_file = time() . "_" . $file->getClientOriginalName();
@@ -190,7 +189,7 @@ class ProfileController extends Controller
             $nama_file = $profiles->profiles->photo;
         }
 
-        if ($request->nra == '') {
+        if ($request->nraupdate == '') {
             $nra = '1022' . $formattedNumber . $no_urut_kota . $no_urut ;
             $data = Profile::create([
                 'user_id' => auth()->user()->id,
@@ -223,8 +222,8 @@ class ProfileController extends Controller
                 'tempat_bertugas' => $request->tempat_bertugas
             ]);
         } else {
-            $nra = $request->nra;
-            Profile::where('NRA',$request->nra)->update([
+            $nra = $request->nraupdate;
+            Profile::where('NRA',$request->nraupdate)->update([
                 'user_id' => auth()->user()->id,
                 'degree' => $request->degree,
                 'place' => $request->place,
