@@ -105,12 +105,6 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-whatsapp"></i>
-                            <span>Kirim Pesan WA Massal </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
                             <i class='fa fa-bullhorn'></i>
                             <span>Pengumuman </span>
                         </a>
@@ -118,7 +112,7 @@
                     <li>
                         <a href="#">
                             <i class='fa fa-android'></i>
-                            <span>KPI Anggota </span>
+                            <span>Penilaian Kinerja Anda </span>
                         </a>
                     </li>
                     <li>
@@ -130,7 +124,7 @@
                     <li>
                         <a href="#">
                             <i class='fa fa-book'></i>
-                            <span>Posting Artikel </span>
+                            <span>Mulai belajar </span>
                         </a>
                     </li>
                     <li>
@@ -149,6 +143,12 @@
                         <a href="#">
                             <i class='fa fa-ban'></i>
                             <span>Sertifikat </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='fa fa-ban'></i>
+                            <span>Chat </span>
                         </a>
                     </li>
                 @endif
