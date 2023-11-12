@@ -73,6 +73,13 @@
                 </a>
             </li>
 
+                <li>
+                    <a href="#">
+                        <i class='fa fa-ban'></i>
+                        <span>Sertifikat </span>
+                    </a>
+                </li>
+
             @else
 
                 @php
@@ -136,6 +143,12 @@
                         <a href="#">
                             <i class='fa fa-ban'></i>
                             <span>Share Ilmu </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='fa fa-ban'></i>
+                            <span>Sertifikat </span>
                         </a>
                     </li>
                 @endif
