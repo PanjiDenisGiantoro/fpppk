@@ -66,22 +66,20 @@
                     <span>Agenda </span>
                 </a>
             </li>
-            <li>
-                <a href="{{ route('user.index') }}">
-                    <i class='fa fa-ban'></i>
-                    <span>Share Ilmu </span>
-                </a>
-            </li>
-
                 <li>
                     <a href="#">
                         <i class='fa fa-ban'></i>
+                        <span>Share Ilmu </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='fa fa-certificate'></i>
                         <span>Sertifikat </span>
                     </a>
                 </li>
 
             @else
-
                 @php
                 $profile = \App\Models\Profile::where('user_id', auth()->user()->id)->where('wa','!=',null)->first();
                 @endphp
@@ -141,13 +139,13 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class='fa fa-ban'></i>
+                            <i class='fa fa-certificate'></i>
                             <span>Sertifikat </span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class='fa fa-ban'></i>
+                            <i class='fa fa-bars'></i>
                             <span>Chat </span>
                         </a>
                     </li>
