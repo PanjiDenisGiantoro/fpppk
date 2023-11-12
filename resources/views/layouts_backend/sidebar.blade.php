@@ -74,12 +74,18 @@
             </li>
 
             @else
+
+                @php
+                $profile = \App\Models\Profile::where('user_id', auth()->user()->id)->where('wa','!=',null)->first();
+                @endphp
+                @if(!empty($profile))
                 <li>
                     <a href="{{ route('profile') }}">
                         <i class='bx bxs-dashboard'></i>
                         <span>Profil</span>
                     </a>
                 </li>
+                @endif
                 @php
                     $profile = \App\Models\Profile::where('user_id', auth()->user()->id)->first();
                 @endphp
@@ -88,6 +94,48 @@
                         <a href="{{ url('/lihat') }}">
                             <i class='bx bxs-dashboard'></i>
                             <span>Cetak Kartu</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-whatsapp"></i>
+                            <span>Kirim Pesan WA Massal </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='fa fa-bullhorn'></i>
+                            <span>Pengumuman </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='fa fa-android'></i>
+                            <span>KPI Anggota </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='fa fa-won'></i>
+                            <span>Struktur Organisasi </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='fa fa-book'></i>
+                            <span>Posting Artikel </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='fa fa-bookmark'></i>
+                            <span>Agenda </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='fa fa-ban'></i>
+                            <span>Share Ilmu </span>
                         </a>
                     </li>
                 @endif
