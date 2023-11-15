@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
 //        ]);
 //
 //        $user->assignRole('user');
-//
+
 
         $admin1 = User::create([
             'name' => 'FPPPK Kab Bogor',

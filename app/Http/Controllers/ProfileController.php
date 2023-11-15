@@ -405,10 +405,10 @@ class ProfileController extends Controller
         $profile = User::with('profiles')->where('id', auth()->user()->id)->first();
         $kecamatan = District::where('id', $profile->profiles->district_id)->first();
         $pdf = PDF::loadView('profile_backend.cetaksertifikat', compact('profile', 'kecamatan'))
-            ->setPaper('a4', 'potrait')
-            ->setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif'])->setWarnings(false)
-            ->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
-            ->setOptions(['isPhpEnabled' => true, 'isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
+            ->setPaper('a4', 'landscape');
+//            ->setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif'])->setWarnings(false)
+//            ->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+//            ->setOptions(['isPhpEnabled' => true, 'isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         return $pdf->download('KTA-FPPPK-' . $profile->profiles->NRA . '.pdf');
 //        return $pdf->download(date('y-m-d').''.pdf');
 //        return view('profile_backend.Cetaksertifikat', compact('profile'));
