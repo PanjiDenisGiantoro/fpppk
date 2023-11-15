@@ -183,7 +183,7 @@
                         <!-- <iframe id="modalIframe" src=""></iframe> -->
                         <iframe src="{{ url('cetak2') }}"></iframe>
                         @if($profile->profiles->is_valid == 1)
-                        <a href="{{ url('cetak2') }}" class="btn btn-primary btn-block mt-3 ">Cetak kartu</a>
+                        <a href="{{ url('cetak1') }}" class="btn btn-primary btn-block mt-3 ">Cetak kartu</a>
                         @endif
                     </div>
                 </div>

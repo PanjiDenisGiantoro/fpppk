@@ -138,7 +138,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/sertifikat">
                             <i class='fa fa-certificate'></i>
                             <span>Sertifikat </span>
                         </a>

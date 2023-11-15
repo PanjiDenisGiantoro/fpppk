@@ -37,6 +37,9 @@ Route::prefix('user')->group(function(){
 Route::get('/lihat',[\App\Http\Controllers\ProfileController::class,'view'])->name('profile.view');
 Route::get('/cetak1',[\App\Http\Controllers\ProfileController::class,'show'])->name('profile.show1');
 Route::get('/cetak2',[\App\Http\Controllers\ProfileController::class,'show1'])->name('profile.show2');
+Route::get('/lihatsertifikat',[\App\Http\Controllers\ProfileController::class,'lihatsertifikat'])->name('profile.lihatsertifikat');
+Route::get('/sertifikat',[\App\Http\Controllers\ProfileController::class,'sertifikat'])->name('profile.sertifikat');
+
 Route::get('/check',[\App\Http\Controllers\ProfileController::class,'check'])->name('profile.check');
 Route::get('/wa',[\App\Http\Controllers\ProfileController::class,'check_wa'])->name('profile.wa');
 //delete
@@ -46,3 +49,4 @@ Route::get('provinces', [\App\Http\Controllers\AreaController::class,'provinces'
 Route::get('cities', [\App\Http\Controllers\AreaController::class,'cities'])->name('cities');
 Route::get('districts', [\App\Http\Controllers\AreaController::class,'districts'])->name('districts');
 Route::get('villages', [\App\Http\Controllers\AreaController::class,'villages'])->name('villages');
+

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Laravolt\Indonesia\Models\City;
 use Laravolt\Indonesia\Models\District;
@@ -392,5 +393,24 @@ class ProfileController extends Controller
         User::where('id', $id)->delete();
         Alert::success('Berhasil', 'Data Berhasil Dihapus');
         return redirect()->route('user.index');
+    }
+    public function lihatsertifikat()
+    {
+        $profile = User::with('profiles')->where('id', auth()->user()->id)->first();
+        $kecamatan = District::where('id', $profile->profiles->district_id)->first();
+        return view('profile_backend.sertifikat', compact('profile', 'kecamatan'));
+    }
+    public function sertifikat()
+    {
+        $profile = User::with('profiles')->where('id', auth()->user()->id)->first();
+        $kecamatan = District::where('id', $profile->profiles->district_id)->first();
+        $pdf = PDF::loadView('profile_backend.cetaksertifikat', compact('profile', 'kecamatan'))
+            ->setPaper('a4', 'potrait')
+            ->setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif'])->setWarnings(false)
+            ->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+            ->setOptions(['isPhpEnabled' => true, 'isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
+        return $pdf->download('KTA-FPPPK-' . $profile->profiles->NRA . '.pdf');
+//        return $pdf->download(date('y-m-d').''.pdf');
+//        return view('profile_backend.Cetaksertifikat', compact('profile'));
     }
 }

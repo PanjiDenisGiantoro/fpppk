@@ -156,7 +156,7 @@
                                         </div>
                                         <div class="mb-3  mt-24">
                                             <label class="form-label mb-14">Agama</label>
-                                            <select name="religion" id="religion" class="form-control select2">
+                                            <select name="religion" id="religion" class="form-control select2"required>
 
                                                 @if(empty($user->profiles->religion))
                                                     <option value="">Pilih</option>
@@ -229,7 +229,7 @@
                                                     @endforeach
                                                 </select>
                                             @else
-                                                <select class="form-control select2" name="province_id" id="provinsi">
+                                                <select class="form-control select2" name="province_id" id="provinsi"required>
                                                     <option value="">==Pilih Salah Satu==</option>
                                                     @foreach ($provinces as $item)
                                                         <option
@@ -245,7 +245,7 @@
                                         </div>
                                         <div class="mb-3  mt-24">
                                             <label class="form-label mb-14">Kabupaten / Kota</label>
-                                            <select class="form-control select2" name="city_id" id="kota">
+                                            <select class="form-control select2" name="city_id" id="kota"required>
                                                 <option value="">Pilih</option>
                                                 @if(!empty($user->profiles->city_id))
                                                     @php
@@ -269,7 +269,7 @@
                                         </div>
                                         <div class="mb-3  mt-24">
                                             <label class="form-label mb-14">Kecamatan</label>
-                                            <select class="form-control select2" name="district_id" id="kecamatan">
+                                            <select class="form-control select2" name="district_id" id="kecamatan" required>
                                                 <option value="">Pilih</option>
 
                                                 @if(!empty($user->profiles->district_id))
@@ -294,7 +294,7 @@
                                         <div class="mb-3  mt-24">
                                             <label class="form-label mb-14">Kelurahan / Desa</label>
 
-                                            <select class="form-control select2" name="village_id" id="desa">
+                                            <select class="form-control select2" name="village_id" id="desa" required>
                                                 <option value="">Pilih</option>
                                                 @if(!empty($user->profiles->village_id))
                                                     @php

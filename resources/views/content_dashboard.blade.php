@@ -908,6 +908,7 @@
                 </div> -->
 
             @else
+
                 <section class="login singup">
                     <div class="row">
                         <div class="col-md-12">
