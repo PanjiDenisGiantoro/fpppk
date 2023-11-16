@@ -138,8 +138,8 @@
                         </a>
                     </li>
                     <li>
-{{--                        <a href="/sertifikat">--}}
-                        <a href="#">
+                        <a href="/sertifikat">
+{{--                        <a href="#">--}}
                             <i class='fa fa-certificate'></i>
                             <span>Sertifikat </span>
                         </a>
