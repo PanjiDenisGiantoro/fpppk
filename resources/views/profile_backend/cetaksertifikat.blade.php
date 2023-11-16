@@ -84,11 +84,11 @@
 </head>
 <body>
 <div class="container">
-    <img class="image" src="{{ public_path('/assets_frontend/fix1.jpg') }}" style="width: 100%">
+    <img class="image" src="{{ public_path('/assets_frontend/fix1.png') }}" style="width: 100%">
     <p class="text-label">
         {{ strtoupper($profile->name) }} {{ $profile->profiles->gelar ?? '' }}
     </p>
-    <img class="image" src="{{ public_path('/assets_frontend/fix2.jpg') }}" style="width: 100%">
+    <img class="image" src="{{ public_path('/assets_frontend/fix2.png') }}" style="width: 100%">
 </div>
 </body>
 </html>
